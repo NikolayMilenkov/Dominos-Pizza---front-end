@@ -1,0 +1,58 @@
+body {
+    width: 100%;
+    background: url("../images/pizza-back.jpg");
+   
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.head {
+    color: red;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 2px #023;
+}
+
+#container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+#sale {
+    width: 45%;
+    padding: 1.3em;
+    text-align: center;
+    margin: 8.9em 1.1em;
+    background: -moz-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px);
+    background: -o-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -o-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -o-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -o-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15fpx);
+    background: -webkit-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #faa 16px), -webkit-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #faa 16px), -webkit-radial-gradient(100% 0, circle, rgba(204, 200, 0, 0) 14px, #faa 15px), -webkit-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #faa 16px);
+    background-position: bottom left, bottom right, top right, top left;
+    -moz-background-size: 51% 51%;
+    -webkit-background-size: 51% 51%;
+    background-size: 51% 51%;
+    background-repeat: no-repeat;
+}
+
+#tableSale {
+    padding: 0.8em;
+    width: 100%;
+    border-top: 2px dotted palegoldenrod;
+    border-bottom: 2px dotted palegoldenrod;
+}
+
+.decoration {
+    width: 30px;
+}
+
+td.center {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#pointer {
+    position: fixed;
+    width: 30px;
+    height: auto;
+    bottom: 0px;
+    left: 50%;
+}
