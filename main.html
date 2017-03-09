@@ -7,145 +7,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style_main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div id="offer_con">
-        <article>
-            <figure id="offer">
-                <img src="images/double_combo.jpeg" width="300px" height="200px" />
-                <figcaption id="offer_dis">
-                    <img id="offer_img" src="images/offer.svg" width="200px" />
-                    <h1>Всяка втора пица на половин цена!</h1>
-                    <hr>
-                    <p id="first_offer">
-                        За всяка втора пица взета от място, получавате втора на половин цена!
-                    </p>
-                    <button type="button">Вземи тази оферта!</button>
-                </figcaption>
-            </figure>
-            <table class="delivery">
+
+    <div id="container">
+        <article id="sale">
+            <h1 class="head">
+                От място всяка втора пица на половин цена!
+            </h1>
+            <table id="tableSale">
                 <tr>
                     <td>
-                        <a href="#"><img src="images/carry_out.svg" width="30px" /> Carry Out</a>
-                    </td>
-                </tr>
-            </table>
-        </article>
-        <article>
-            <figure id=offer>
-                <img src="images/combo2.jpg" width="300px" height="200px" />
-                <figcaption id="offer_dis">
-                    <img id="offer_img" src="images/offer.svg" width="200px" />
-                    <h1 id="famCombo">Семейно комбо</h1>
-                    <hr>
-                    <p id="second_offer">
-                        2 големи пици + Чоко пай + Кока-Кола 1.25л - само за 23.70лв. *Не важи с тесто Philadelphia и категория "За ценители".
-                    </p>
-                    <button type="button">Вземи тази оферта!</button>
-                </figcaption>
-            </figure>
-            <table class="delivery">
-                <tr>
-                    <td>
-                        <a href="#"><img src="images/delivery_bike.svg" width="30px" />Доставка</a>
+                        <img class="decoration" width=30px src="images/decoration.png" /> </td>
+                    <td class="center">
+                        Carry out special
                     </td>
                     <td>
-                        <a href="#"><img src="images/carry_out.svg" width="30px" /> Carry Out</a>
-                    </td>
+                        <img class="decoration" width=30px src="images/decoration.png" /> </td>
                 </tr>
             </table>
+            <p>
+                За всяка пица, взета от място получавате втора на половин цена!
+            </p>
+
+
         </article>
+        <a href="#second_part"><img id="pointer" src="images/point.png" /></a>
     </div>
-    <section id="info">
-        <div id="articles_container">
-            <article id="tracker">
-                <table class="header_art">
+    <div id="second_part">
+        <div id="offer_con">
+            <article>
+                <figure id="offer">
+                    <img src="images/double_combo.jpeg" width="300px" height="200px" />
+                    <figcaption id="offer_dis">
+                        <img id="offer_img" src="images/offer.svg" width="200px" />
+                        <h1>Всяка втора пица на половин цена!</h1>
+                        <hr>
+                        <p id="first_offer">
+                            За всяка втора пица взета от място, получавате втора на половин цена!
+                        </p>
+                        <button type="button">Вземи тази оферта!</button>
+                    </figcaption>
+                </figure>
+                <table class="delivery">
                     <tr>
                         <td>
-                            <img width=30px src="images/decoration.png" />
-                        </td>
-                        <td>
-                            Pizza Tracker
-                        </td>
-                        <td>
-                            <img width=30px src="images/decoration.png" />
+                            <a href="#"><img src="images/carry_out.svg" width="30px" /> Carry Out</a>
                         </td>
                     </tr>
                 </table>
-                <p> Споделете поръчката си с нашия уникален Pizza Trcker</p>
-                <button type="submit" autofocus value="track Your purchase">Последи поръчката си сега!</button>
             </article>
-            <article id="newsletter">
-                <table class="header_art">
+            <article>
+                <figure id=offer>
+                    <img src="images/combo2.jpg" width="300px" height="200px" />
+                    <figcaption id="offer_dis">
+                        <img id="offer_img" src="images/offer.svg" width="200px" />
+                        <h1 id="famCombo">Семейно комбо</h1>
+                        <hr>
+                        <p id="second_offer">
+                            2 големи пици + Чоко пай + Кока-Кола 1.25л - само за 23.70лв. *Не важи с тесто Philadelphia и категория "За ценители".
+                        </p>
+                        <button type="button">Вземи тази оферта!</button>
+                    </figcaption>
+                </figure>
+                <table class="delivery">
                     <tr>
                         <td>
-                            <img width=30px src="images/decoration.png" />
+                            <a href="#"><img src="images/delivery_bike.svg" width="30px" />Доставка</a>
                         </td>
                         <td>
-                            Абонирайте се за нашия NEWSLETTER
-                        </td>
-                        <td>
-                            <img width=30px src="images/decoration.png" />
+                            <a href="#"><img src="images/carry_out.svg" width="30px" /> Carry Out</a>
                         </td>
                     </tr>
                 </table>
-                <p> Абонирайте се за нашия newsletter и първи научавайте за горещите ни оферти!</p>
-                <input type="email" placeholder="myemail@example.com" name="emai" />
-                <input type="image" src="images/ok.png" width="25px" height="25px" />
-            </article>
-            <article id="skype">
-                <table class="header_art">
-                    <tr>
-                        <td>
-                            <img width=30px src="images/decoration.png" />
-                        </td>
-                        <td>
-                            Поръчайте през SKYPE
-                        </td>
-                        <td>
-                            <img width=30px src="images/decoration.png" />
-                        </td>
-                    </tr>
-                </table>
-                <p> Поръчайте като ни се обадите през Skype!</p>
-                <a href="#"><img src="images/skype.png" alt="skype" /></a>
             </article>
         </div>
-        <div id="aside_container">
-            <aside id="pizzaApp">
-                <table class="header_art">
-                    <tr>
-                        <td>
-                            <img width=30px src="images/decoration.png" />
-                        </td>
-                        <td>
-                            <a href="#">Domino's pizza app</a>
-                        </td>
-                        <td>
-                            <img width=30px src="images/decoration.png" />
-                        </td>
-                    </tr>
-                </table>
-                <a href="#">
-                    <p> Поръчайте онлайн чрез безплатното ни приложение.</p>
-                    <p>Свалете сега тук!</p>
-                </a>
-                <ul>
-                    <li>
-                        <a id="android" href="#"><img src="images/android_icon.svg" alt="android" width="50px" /></a>
-                    </li>
-                    <li id="and">&</li>
-                    <li>
-                        <a id="android" href="#"><img src="images/apple_icon.svg" alt="android" width="50px" /></a>
-                    </li>
-                </ul>
-                <p id="iphone_img">
-                    <a  href="#"><img src="images/iphone.png" alt="phone" /></a>
-                </p>
-            </aside>
-        </div>
-    </section>
+        <section id="info">
+            <div id="articles_container">
+                <article id="tracker">
+                    <table class="header_art">
+                        <tr>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                            <td>
+                                Pizza Tracker
+                            </td>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                        </tr>
+                    </table>
+                    <p> Споделете поръчката си с нашия уникален Pizza Trcker</p>
+                    <button type="submit" autofocus value="track Your purchase">Последи поръчката си сега!</button>
+                </article>
+                <article id="newsletter">
+                    <table class="header_art">
+                        <tr>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                            <td>
+                                Абонирайте се за нашия NEWSLETTER
+                            </td>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                        </tr>
+                    </table>
+                    <p> Абонирайте се за нашия newsletter и първи научавайте за горещите ни оферти!</p>
+                    <input type="email" placeholder="myemail@example.com" name="emai" />
+                    <input type="image" src="images/ok.png" width="25px" height="25px" />
+                </article>
+                <article id="skype">
+                    <table class="header_art">
+                        <tr>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                            <td>
+                                Поръчайте през SKYPE
+                            </td>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                        </tr>
+                    </table>
+                    <p> Поръчайте като ни се обадите през Skype!</p>
+                    <a href="#"><img src="images/skype.png" alt="skype" /></a>
+                </article>
+            </div>
+            <div id="aside_container">
+                <aside id="pizzaApp">
+                    <table class="header_art">
+                        <tr>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                            <td>
+                                <a href="#">Domino's pizza app</a>
+                            </td>
+                            <td>
+                                <img width=30px src="images/decoration.png" />
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="#">
+                        <p> Поръчайте онлайн чрез безплатното ни приложение.</p>
+                        <p>Свалете сега тук!</p>
+                    </a>
+                    <ul>
+                        <li>
+                            <a id="android" href="#"><img src="images/android_icon.svg" alt="android" width="50px" /></a>
+                        </li>
+                        <li id="and">&</li>
+                        <li>
+                            <a id="android" href="#"><img src="images/apple_icon.svg" alt="android" width="50px" /></a>
+                        </li>
+                    </ul>
+                    <p id="iphone_img">
+                        <a href="#"><img src="images/iphone.png" alt="phone" /></a>
+                    </p>
+                </aside>
+            </div>
+        </section>
+    </div>
 </body>
+<script type="text/javascript" src="JS/controller.js"></script>
 
 </html>
