@@ -1,217 +1,307 @@
-body {
-    background-image: url("../images/pizza_back.jpg");
-    font-family: Segoe UI Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#offer_con {
-    display: inline-block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10em 1.3em;
-    text-align: center;
-}
-
-article {
-    margin: 10px;
-    display: inline-block;
-}
-
-#article_1 {
-    float: left;
-}
-
-#article_2 {
-    float: right;
-}
-
-#offer {
-    background-color: #fff;
-    width: 300px;
-    text-align: center;
-}
-
-#offer_dis {
-    padding: 1.3em;
-}
-
-figcaption>h1 {
-    margin: 0.8em 0;
-    color: blueviolet;
-    font-size: 1.6em;
-}
-
-#famCombo {
-    margin: 0.8em 0 1.6em 0;
-    color: blueviolet;
-    font-size: 1.6em;
-}
-
-hr {
-    width: 60%;
-}
-
-#first_offer {
-    margin-bottom: 5em;
-    font-size: 1.1em;
-}
-
-#second_offer {
-    margin-bottom: 3.3em;
-    font-size: 1.1em;
-}
-
-figcaption>button {
-    letter-spacing: 1px;
-    background-color: limegreen;
-    font-size: 1.3em;
-    padding: 0.5em;
-    color: #fff;
-}
-
-table.delivery {
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid blueviolet;
-    padding: 0.5em;
-}
-
-.delivery td a {
-    text-decoration: none;
-}
-
-#info {
-    width: 100%;
-    position: absolute;
-    top: 60em;
-    margin: 2.1em;
-    box-sizing: border-box;
-    height: 100%;
-    display: inline-block;
-}
-
-#articles_container {
-    width: 60%;
-    float: left;
-    height: 100%
-}
-
-#aside_container {
-    width: 30%;
-    float: right;
-    height: 100%
-}
-
-#tracker {
-    background-color: red;
-    padding: 0.5em;
-    width: 80%;
-}
-
-.header_art {
-    text-align: center;
-    color: #fff;
-    width: 100%;
-    margin-bottom: 1.3em;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-transform: uppercase
-}
-
-#tracker p {
-    color: #fff;
-    margin-bottom: 1.3em;
-}
-
-#tracker button {
-    width: 70%;
-    background-color: #000;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 0.5em;
-    margin-bottom: 3.4em;
-}
-
-#newsletter {
-    background-color: #21f;
-    padding: 0.5em;
-}
-
-#newsletter p {
-    color: #fff;
-}
-
-#newsletter input[type="email"] {
-    width: 70%;
-    margin-bottom: 3.4em;
-    padding: 0.5em;
-}
-
-#newsletter input[type="image"] {
-    margin-left: 0.8em;
-}
-
-#skype {
-    background-color: #29f;
-    padding: 0.5em;
-    width: 80%;
-}
-
-#skype p {
-    color: #fff;
-    margin-bottom: 2.1em;
-}
-
-#skype img {
-    margin-bottom: 1.3em;
-}
-
-#skype,
-#newsletter,
-#tracker {
-    width: 80%;
-    text-align: center;
-    border-radius: 15px 25px;
-    margin-bottom: 1.3em;
-}
-
-#pizzaApp {
-    margin-bottom: 1.3em;
-    background-color: #39a;
-    padding: 0.5em 0.5em 0 0.5em;
-    width: 80%;
-    text-align: center;
-    border-radius: 15px 25px;
-    top: 1.3em;
-}
-
-#pizzaApp a {
-    text-decoration: none;
-    color: #fff;
-}
-
-#pizzaApp p {
-    margin: 0.8em 1.3em 0 1.3em;
-}
-
-#pizzaApp ul {
-    padding: 10px;
-    margin: 10px;
-}
-
-#pizzaApp li {
-    display: inline;
-    padding: 5px;
-}
-
-#and {
-    color: #fff;
-    font-size: 2.1em;
-}
-
-#iphone_img img {
-    max-width: 100%;
-    height: auto
-}
+ html,
+ body {
+     margin: 0;
+     min-height: 100%;
+     width: 100%;
+ }
+ 
+ body {
+     font-family: Segoe UI Tahoma, Geneva, Verdana, sans-serif;
+     box-sizing: border-box;
+     display: inline-block;
+ }
+ 
+ #container {
+     padding: 10em 10em 22.5em 10em;
+     background-image: url("../images/pizza-back.jpg")
+ }
+ 
+ .head {
+     color: red;
+     text-transform: uppercase;
+     font-size: 2.5em;
+     text-shadow: 2px 2px 2px #023;
+     margin-bottom: 0.5em;
+ }
+ 
+ #sale {
+     width: 35%;
+     padding: 2.1em;
+     text-align: center;
+     background: -moz-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px);
+     background: -o-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -o-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -o-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -o-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15fpx);
+     background: -webkit-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #faa 16px), -webkit-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #faa 16px), -webkit-radial-gradient(100% 0, circle, rgba(204, 200, 0, 0) 14px, #faa 15px), -webkit-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #faa 16px);
+     background-position: bottom left, bottom right, top right, top left;
+     -moz-background-size: 51% 51%;
+     -webkit-background-size: 51% 51%;
+     background-size: 51% 51%;
+     background-repeat: no-repeat;
+ }
+ 
+ #tableSale {
+     width: 100%;
+     margin-bottom: 0.3em;
+     border-top: 2px dotted palegoldenrod;
+     border-bottom: 2px dotted palegoldenrod;
+ }
+ 
+ #tableSale tr td {
+     padding: 0.3em;
+ }
+ 
+ .decoration {
+     width: 30px;
+ }
+ 
+ td.center {
+     font-weight: bold;
+     font-size: 1.3em;
+ }
+ 
+ #pointer {
+     position: absolute;
+     bottom: 95%;
+     left: 49%;
+     width: 30px;
+     height: auto;
+     animation: MoveUpDown 1s linear infinite;
+     -webkit-animation: MoveUpDown 1s linear infinite;
+ }
+ 
+ @keyframes MoveUpDown {
+     0% {
+         bottom: 4%;
+     }
+     50% {
+         bottom: 6%;
+     }
+     100% {
+         bottom: 4%;
+     }
+ }
+ 
+ @-webkit-keyframes MoveUpDown {
+     0% {
+         bottom: 4%;
+     }
+     50% {
+         bottom: 6%;
+     }
+     100% {
+         bottom: 4%;
+     }
+ }
+ 
+ #second_part {
+     background-image: url("../images/pizza1.jpg");
+ }
+ 
+ #offer_con {
+     display: inline-block;
+     box-sizing: border-box;
+     width: 100%;
+     padding: 10em 1.3em;
+     text-align: center;
+     top: 60em;
+ }
+ 
+ article {
+     margin: 10px;
+     display: inline-block;
+ }
+ 
+ #article_1 {
+     float: left;
+ }
+ 
+ #article_2 {
+     float: right;
+ }
+ 
+ #offer {
+     background-color: #fff;
+     width: 300px;
+     text-align: center;
+ }
+ 
+ #offer_dis {
+     padding: 1.3em;
+ }
+ 
+ figcaption>h1 {
+     margin: 0.8em 0;
+     color: blueviolet;
+     font-size: 1.6em;
+ }
+ 
+ #famCombo {
+     margin: 0.8em 0 1.6em 0;
+     color: blueviolet;
+     font-size: 1.6em;
+ }
+ 
+ hr {
+     width: 60%;
+ }
+ 
+ #first_offer {
+     margin-bottom: 5em;
+     font-size: 1.1em;
+ }
+ 
+ #second_offer {
+     margin-bottom: 3.3em;
+     font-size: 1.1em;
+ }
+ 
+ figcaption>button {
+     letter-spacing: 1px;
+     background-color: limegreen;
+     font-size: 1.3em;
+     padding: 0.5em;
+     color: #fff;
+ }
+ 
+ table.delivery {
+     width: 100%;
+     text-align: center;
+     border-top: 1px solid blueviolet;
+     padding: 0.5em;
+ }
+ 
+ .delivery td a {
+     text-decoration: none;
+ }
+ 
+ #info {
+     width: 100%;
+     top: 120em;
+     margin: 2.1em;
+     box-sizing: border-box;
+     height: 100%;
+     display: inline-block;
+ }
+ 
+ #articles_container {
+     width: 60%;
+     float: left;
+     height: 100%
+ }
+ 
+ #aside_container {
+     width: 30%;
+     float: right;
+     height: 100%
+ }
+ 
+ #tracker {
+     background-color: red;
+     padding: 0.5em;
+     width: 80%;
+ }
+ 
+ .header_art {
+     text-align: center;
+     color: #fff;
+     width: 100%;
+     margin-bottom: 1.3em;
+     font-size: 1.1em;
+     font-weight: bold;
+     text-transform: uppercase
+ }
+ 
+ #tracker p {
+     color: #fff;
+     margin-bottom: 1.3em;
+ }
+ 
+ #tracker button {
+     width: 70%;
+     background-color: #000;
+     text-transform: uppercase;
+     color: #fff;
+     font-size: 0.8em;
+     padding: 0.5em;
+     margin-bottom: 3.4em;
+ }
+ 
+ #newsletter {
+     background-color: #21f;
+     padding: 0.5em;
+ }
+ 
+ #newsletter p {
+     color: #fff;
+ }
+ 
+ #newsletter input[type="email"] {
+     width: 70%;
+     margin-bottom: 3.4em;
+     padding: 0.5em;
+ }
+ 
+ #newsletter input[type="image"] {
+     margin-left: 0.8em;
+ }
+ 
+ #skype {
+     background-color: #29f;
+     padding: 0.5em;
+     width: 80%;
+ }
+ 
+ #skype p {
+     color: #fff;
+     margin-bottom: 2.1em;
+ }
+ 
+ #skype img {
+     margin-bottom: 1.3em;
+ }
+ 
+ #skype,
+ #newsletter,
+ #tracker {
+     width: 80%;
+     text-align: center;
+     border-radius: 15px 25px;
+     margin-bottom: 1.3em;
+ }
+ 
+ #pizzaApp {
+     margin-bottom: 1.3em;
+     background-color: #39a;
+     padding: 0.5em 0.5em 0 0.5em;
+     width: 80%;
+     text-align: center;
+     border-radius: 15px 25px;
+ }
+ 
+ #pizzaApp a {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ #pizzaApp p {
+     margin: 0.8em 1.3em 0 1.3em;
+ }
+ 
+ #pizzaApp ul {
+     padding: 10px;
+     margin: 10px;
+ }
+ 
+ #pizzaApp li {
+     display: inline;
+     padding: 5px;
+ }
+ 
+ #and {
+     color: #fff;
+     font-size: 2.1em;
+ }
+ 
+ #iphone_img img {
+     max-width: 100%;
+     height: auto
+ }
