@@ -13,7 +13,8 @@
  
  #container {
      padding: 10em 10em 22.5em 10em;
-     background-image: url("../images/pizza-back.jpg")
+     background-image: url("../images/pizza-back.jpg");
+     overflow-x: hidden;
  }
  
  .head {
@@ -25,7 +26,7 @@
  }
  
  #sale {
-     width: 35%;
+     width: 28em;
      padding: 2.1em;
      text-align: center;
      background: -moz-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px), -moz-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 14px, #fff 15px);
