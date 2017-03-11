@@ -8,11 +8,99 @@
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style_main.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>
 
-    <div id="container">
+   
+          <header id="menu" onscroll="scroll">
+        <div id="dropdownMain">
+         <img id="dropdown" src="images/dropdown.png" alt="">
+         <div id="myDropdownDiv" class="dropdown-content">       
+            <ul>
+                <li><a href="#">ОБАДЕТЕ НИ СЕ </a> <li>
+                <li><button id="menuButton2"  >МЕНЮ</button></li>
+                <li><button id="orderButton2">ПОРЪЧАЙ СЕГА</button> </li>
+                <li><a href="">УСЛОВИЯ ЗА ПОЛЗВАНЕ</a></li>
+            </ul>
+         </div>
+          <img src="images/cart.png" id="cart" alt="">  
+         </div>
+        <nav id="mainNav">
+         <a href=""><img src="images/logo.png" id="logo" alt="logo"> </a>
+           <ul>
+            <li><a href="#"><img src="images/phone.png" id="phone" alt=""></a></li>
+            <li><a href="#" id="callUs" >0700533487</a>  </li>
+            <li> <button type="button" id="menuButton">МЕНЮ</button></li>
+        <li> <button id="orderButton1">ПОРЪЧАЙ СЕГА</button> </li>
+         </ul>
+        </nav>
+    </header>
+     <div id="popUp">
+            <form>
+                 <fieldset id="login">
+                      <img src="images/close.png" alt="close" id="close">
+                    <legend>ВХОД</legend>         
+                    <button id="facebook" onclick="location.href='http://facebook.com';"target="_blank" value="Go to Facebook"></button>
+                    <input type="email" placeholder="E-Mail"></input>
+                    <input type="password" placeholder="Парола"></input>
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for=" rememberMe">Запомни ме </label>
+                    <button type='submit' > Вход </button>
+             <button type='button' id="registration"> Регистрация </button>
+                    <img src="images/logo.png"id="corleone" alt="">
+                </fieldset>
+            </form>    
+          </div>  
+</section>
+
+
+        <section >
+        <div  id="registrationWrapper">
+            <form>
+            <fieldset>
+                <img src="images/close2.png" alt="close" id="close2">
+            <legend>РЕГИСТРАЦИЯ</legend> 
+                   ИМЕ*<input type="text" id="firstName">
+                   ФАМИЛНО ИМЕ*<input type="text" id="lastName"></br>
+                    <p id="nameMessage"></p>
+                   EMAIL*<input type="email" id ="email"></br>
+                   <p id="emailMessage"></p>
+                   НОВА ПАРОЛА*<input type="password" id="pass"></br>
+                   <p id="passMessage"></p>
+                   ПОТВЪРДЕТЕ ПАРОЛАТА*<input type="password" id="passConfirm"></br>
+                   <button type="submit" name="btn" value="val">Изпрати</button>
+            </fieldset> 
+            </form>
+        </div>
+ <div id="restaurantDiv">
+        <img src="images/close2.png" alt="close" id="close3">
+        <h1>ИЗБЕРЕТЕ РЕСТОРАНТ</h1>
+            <select name="restaurants" id="restaurantList">
+                 <option value="default">Изберете ресторант</option>
+                 <option value="Studentski" id="option1">София-Студентски Град</option>
+                 <option value="Darvenica">София-Дървеница</option>
+                 <option value="Mladost1">София-Младост 1</option>
+                 <option value="Mladost2">София-Младост 2</option>
+                 <option value="Mladost3">София-Младост 3</option>
+                 <option value="Mladost4">София-Младост 4</option>
+                 <option value="Lozenec">София-Лозенец</option>
+                 <option value="Banishora">София-Банишора</option>
+                 <option value="Dianabad">София-Дианабад</option>
+                 <option value="PlovdivCenter">Пловдив-Център</option>
+            </select>
+              </div>
+
+ <section id="landingPage">
+  <div id="container">
+    <section id="slideshow">       
+        <div><img src="images/pizza1.jpeg" alt=""> </div>
+        <div><img src="images/pizza4.jpg" alt=""> </div>
+        <div><img src="images/pizza3.jpg" alt=""></div>
+       </section>
+    
+            <!--do tuk sum az -->
         <article id="sale">
             <h1 class="head">
                 От място всяка втора пица на половин цена!
@@ -31,10 +119,10 @@
             <p>
                 За всяка пица, взета от място получавате втора на половин цена!
             </p>
-
-
+</div>
+ <a href="#second_part"><img id="pointer" src="images/point.png" /></a>
         </article>
-        <a href="#second_part"><img id="pointer" src="images/point.png" /></a>
+       
     </div>
     <div id="second_part">
         <div id="offer_con">
@@ -101,7 +189,7 @@
                         </tr>
                     </table>
                     <p> Споделете поръчката си с нашия уникален Pizza Trcker</p>
-                    <button type="submit" autofocus value="track Your purchase">Последи поръчката си сега!</button>
+                    <button type="submit"   value="track Your purchase">Последи поръчката си сега!</button>
                 </article>
                 <article id="newsletter">
                     <table class="header_art">
@@ -174,7 +262,30 @@
             </div>
         </section>
     </div>
+
+</section>
+
+      <!--tuk zapochva stranicata s menuto -->
+      <header id="menuPageHeader">
+          <nav>
+              <button class="buttons">СУПИ</button>
+              <button class="buttons"> ПИЦИ</button>  
+              <button class="buttons">САЛАТИ</button>  
+              <button class="buttons"> ПАСТА</button> 
+              <button class="buttons">ДЕСЕРТИ</button> 
+              <button class="buttons">НАПИТКИ</button>
+              <div id="menuImages">
+              <img src="images/soup.png" alt="">
+              <img src="images/pizza.png" alt=""> 
+              <img src="images/salad.png" alt="">
+              <img src="images/pasta.png" alt="">
+              <img src="images/desert.png" alt="">
+               <img src="images/drinks.png" alt="">
+               </div>
+          </nav>
+      </header>
 </body>
 <script type="text/javascript" src="JS/controller.js"></script>
+<script src= "JS/javascript.js" type="text/javascript"></script>
 
 </html>
