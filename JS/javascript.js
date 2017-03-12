@@ -87,7 +87,10 @@ document.getElementById("close").setAttribute("onclick","closePopUp()");
 }
  
 
- 
+ document.getElementById("landingPage").onclick = function () {
+     document.getElementById("myDropdownDiv").style.display = "none";
+
+ }
 
 document.getElementById("close2").setAttribute("onclick","closeRegForm()")  
 var closeRegForm = function  ( )  {
@@ -103,7 +106,7 @@ var clicks = 0;
 document.getElementById("dropdown").onclick = function () {
        clicks++;
        if (clicks%2==1) { 
-      document.getElementById("myDropdownDiv").style.display = "unset"; 
+      document.getElementById("myDropdownDiv").style.display = "inline-block"; 
          document.getElementById("restaurantDiv").style.display = "none";   
     ;
          document.getElementById("registrationWrapper").style.display="none";
@@ -113,7 +116,9 @@ document.getElementById("dropdown").onclick = function () {
               document.getElementById("myDropdownDiv").style.display = "none"; 
        }
 }
-
+document.getElementById("slideshow").onclick = function() {
+     document.getElementById("myDropdownDiv").style.display = "none"; 
+}
  
 document.getElementById("registration").onclick = function () { 
     document.getElementById("popUp").style.display = "none";
@@ -199,13 +204,12 @@ document.getElementById("lastName").onblur  = function () {
      var email = document.getElementById("email");
      var emailMessage = document.getElementById("emailMessage");
      var text =  document.createTextNode("Въведете валиден email!!");
-    
  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var flag = re.test(email.value);
     if (!flag) {
         emailMessage.appendChild(text);
  }
- console.log(allowSubmit);
+ 
  }
 
 // blokirane na butona submit
@@ -226,4 +230,67 @@ document.getElementById("lastName").onblur  = function () {
    document.getElementById("restaurantDiv").style.display= "none";
  document.getElementById("menuPageHeader").style.display = "unset";
  }
+
+
+
+
+var userList = [];
+ document.querySelector("#registrationWrapper button[type=submit]").onclick = function (event) {
+     event.preventDefault();
+ var password = document.getElementById("pass");
+var passConfirm = document.getElementById("passConfirm");
+ var email = document.getElementById("email");
+ var emailFlag = false;
+ var firstName = document.getElementById("firstName");
+ var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var flag = re.test(email.value);
+var regexp = /^[A-z]+$/;
+    regexp.test(firstName.value);
+            for (var key in userList) {
+     if( userList[key].email === email.value) {
+                document.getElementById("welcomeMessage").style.display = "block";
+     document.querySelector("#welcomeMessage h1").innerHTML = "Този email е зает!" ; 
+         emailFlag = true;
+           // proverka za sashtestvuvasht email
+     }
+ }
+ if (password.value.length>=6 && passConfirm.value===password.value &&  regexp.test(firstName.value) && firstName.value.length>1 && regexp.test(lastName.value) && lastName.value.length>1 &&
+ re.test(email.value) && emailFlag == false ) {     // proverka za verni poleta 
+     var user = {
+         firstName: document.getElementById("firstName").value,
+         lastName: document.getElementById("lastName").value,
+         email:document.getElementById("email").value,
+         password: document.getElementById("pass").value
+     }
+     userList.push(user);
+     document.getElementById("welcomeMessage").style.display = "block";
+     document.querySelector("#welcomeMessage h1").innerHTML = "Поздравления " + user.firstName + " ! Вашата регистрация беше успешна. ";
+ event.preventDefault();
+ document.getElementById("registrationWrapper").style.display ="none";
+ document.getElementById("popUp").style.display ="block";
+    }
+ }
+
+
+ document.getElementById("welcomeMessage").onclick = function () {
+     document.getElementById("welcomeMessage").style.display = "none";   // za zatvarqne na welcome message-a 
+ }
+
+document.getElementById("enter").onclick = function () { 
+    console.log(userList);
+    var email = document.querySelector("#popUp input[type=email]");
+    var pass = document.querySelector("#popUp input[type=password]");
+    for (var key in userList)  {
+        if (email.value==userList[key].email && pass.value==userList[key].password) {
+             document.getElementById("welcomeMessage").style.display = "block";
+     document.querySelector("#welcomeMessage h1").innerHTML = "Welcome " + userList[key].firstName + " !";
+     document.getElementById("popUp").style.display = "none";
+        }
+    else {
+         document.getElementById("welcomeMessage").style.display = "block";
+     document.querySelector("#welcomeMessage h1").innerHTML = "Грешен email или парола!" 
+    }
+}
+}
+
  
