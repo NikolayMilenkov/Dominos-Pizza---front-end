@@ -16,6 +16,7 @@
    
           <header id="menu" onscroll="scroll">
         <div id="dropdownMain">
+            <div id = "dropdownContainer">
          <img id="dropdown" src="images/dropdown.png" alt="">
          <div id="myDropdownDiv" class="dropdown-content">       
             <ul>
@@ -26,6 +27,8 @@
             </ul>
          </div>
           <img src="images/cart.png" id="cart" alt="">  
+         </div>
+         
          </div>
         <nav id="mainNav">
          <a href=""><img src="images/logo.png" id="logo" alt="logo"> </a>
@@ -47,7 +50,7 @@
                     <input type="password" placeholder="Парола"></input>
                     <input type="checkbox" id="rememberMe" name="rememberMe">
                     <label for=" rememberMe">Запомни ме </label>
-                    <button type='submit' > Вход </button>
+                    <button  id="enter" type='button' > Вход </button>
              <button type='button' id="registration"> Регистрация </button>
                     <img src="images/logo.png"id="corleone" alt="">
                 </fieldset>
@@ -68,10 +71,15 @@
                    НОВА ПАРОЛА*<input type="password" id="pass"></br>
                    <p id="passMessage"></p>
                    ПОТВЪРДЕТЕ ПАРОЛАТА*<input type="password" id="passConfirm"></br>
-                   <button type="submit" name="btn" value="val">Изпрати</button>
+                   <button  type="submit" name="btn" value="val">Изпрати</button>
             </fieldset> 
             </form>
         </div>
+        </section>
+        <div id="welcomeMessage">
+            <h1>Welcome Mihail</h1>
+        </div>
+
  <div id="restaurantDiv">
         <img src="images/close2.png" alt="close" id="close3">
         <h1>ИЗБЕРЕТЕ РЕСТОРАНТ</h1>
@@ -280,8 +288,10 @@
               <img src="images/desert.png" alt="">
                <img src="images/drinks.png" alt="">
                </div>
-          </nav>
+                     <header id="menuPageSubHeader">
       </header>
+          </nav>
+
       <section id="gallery">
       <div><img src="https://www.dominos.bg/gallery/fmobile/1265medium.png" alt></div>
 <div><img src="https://www.dominos.bg/gallery/fmobile/1290medium.png" alt></div>
