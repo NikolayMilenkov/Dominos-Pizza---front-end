@@ -257,8 +257,8 @@
  #facebook:active {
      width: 42%;
  }
- 
  /*input[type=email],*/
+ 
  input[type=password] {
      display: block;
      margin: 10px auto;
@@ -880,24 +880,32 @@
      text-decoration: none;
  }
  
+ #second_article {
+     width: 300px;
+ }
+ 
+ @media (max-width:650px) {
+     #second_article {
+         display: none;
+         width: 100%;
+         margin: 0;
+         padding: 0;
+     }
+  
+ }
+ /*--------------*/
+ 
  #info {
      width: 100%;
-     top: 120em;
-     margin: 2.1em;
      box-sizing: border-box;
      height: 100%;
      display: inline-block;
+     margin-top: 2.3em;
  }
  
  #articles_container {
      width: 60%;
      float: left;
-     height: 100%
- }
- 
- #aside_container {
-     width: 30%;
-     float: right;
      height: 100%
  }
  
@@ -920,6 +928,7 @@
  #tracker p {
      color: #fff;
      margin-bottom: 1.3em;
+     text-align: left;
  }
  
  #tracker button {
@@ -942,8 +951,8 @@
  }
  
  #newsletter input[type="email"] {
-     width: 70%;
-     margin-bottom: 3.4em;
+     width: 80%;
+     margin: 1.1em auto;
      padding: 0.5em;
  }
  
@@ -960,6 +969,7 @@
  #skype p {
      color: #fff;
      margin-bottom: 2.1em;
+     text-align: center;
  }
  
  #skype img {
@@ -970,18 +980,23 @@
  #newsletter,
  #tracker {
      width: 80%;
-     text-align: center;
      border-radius: 15px 25px;
      margin-bottom: 1.3em;
  }
  
+ #aside_container {
+     width: 35%;
+     float: right;
+     height: 100%;
+     margin-right: 1.1em;
+ }
+ 
  #pizzaApp {
-     margin-bottom: 1.3em;
      background-color: #39a;
-     padding: 0.5em 0.5em 0 0.5em;
-     width: 80%;
+     padding: 1.1em 1.1em 0 1.1em;
      text-align: center;
      border-radius: 15px 25px;
+     margin-right: 1.1em;
  }
  
  #pizzaApp a {
@@ -991,27 +1006,67 @@
  
  #pizzaApp p {
      margin: 0.8em 1.3em 0 1.3em;
+     text-align: left;
+     padding: 0;
  }
  
  #pizzaApp ul {
-     padding: 10px;
-     margin: 10px;
+     padding: 1.1em;
+     margin: 1.1em;
  }
  
  #pizzaApp li {
      display: inline;
-     padding: 5px;
+     padding: 0.8em;
  }
  
  #and {
      color: #fff;
-     font-size: 2.1em;
+     font-size: 1.1 em;
+ }
+ 
+ #iphone_img {
+     text-align: center;
  }
  
  #iphone_img img {
      max-width: 100%;
-     height: auto
+     height: auto;
+     display: block;
+     margin: 0 auto;
+     text-align: center;
+     width: 21em;
  }
+ 
+ @media (max-width:750px) {
+     #info {
+         width: 100%;
+         margin-top: 2.3em;
+     }
+     #aside_container,
+     #articles_container {
+         width: 100%;
+         display: block;
+     }
+     #aside_container {
+         margin-right: 0;
+     }
+     #skype,
+     #newsletter,
+     #tracker,
+     #pizzaApp {
+         width: 80%;
+         display: block;
+         margin: 1.1em auto;
+     }
+     #iphone_img {
+         display: none;
+     }
+     #android_apple_icon {
+         width: 100%;
+     }
+ }
+ /* footer */
  
  footer {
      background-color: #faa;
@@ -1045,9 +1100,33 @@
      width: 180px;
  }
  
+ li #tel_icon {
+     display: none;
+     width: 50px;
+ }
+ 
  #social_icons li {
      display: inline;
      padding: 0.8em;
+ }
+ 
+ @media (max-width:900px) {
+     li #tel {
+         display: none;
+     }
+     li #tel_icon {
+         display: inline-block;
+         width: 50px;
+     }
+ }
+ 
+ @media (max-width:750px) {
+     #info li {
+         display: none;
+     }
+     #social_icons li {
+         display: inline-block;
+     }
  }
  /*-- CONTACT FORM */
  
@@ -1075,7 +1154,7 @@
  .info_contact {
      font-weight: bold;
      font-size: 1.3em;
-     margin: 0.8em 7em;
+     margin: 0.8em 3.4em;
  }
  
  #contact_form form>.head_contact {
@@ -1088,4 +1167,171 @@
  
  .head_contact {
      text-align: center;
+ }
+ 
+ #rights {
+     display: block;
+     padding: 0.8em;
+     text-align: right;
+     color: #061;
+ }
+ 
+ @media (max-width:750px) {
+     #contact_form {
+         width: 80%;
+         padding: 0.5em;
+     }
+     .info_contact {
+         font-weight: bold;
+         font-size: 1.3em;
+         margin: 0.8em 0.8em;
+     }
+ }
+ /* Terms of use */
+ 
+ #termsOfUse {
+     margin: 0 auto;
+     width: 80%;
+     background-color: #fff;
+     padding: 1.3em;
+     box-shadow: 15px 15px 10px #888;
+ }
+ 
+ #termsOfUse p {
+     font-size: 1.3em;
+     margin-bottom: 2.1em;
+ }
+ 
+ #termsOfUse :nth-child(2) {
+     padding-top: 2.1em;
+ }
+ 
+ #termsOfUse p.bold {
+     font-weight: bold;
+ }
+ 
+ #privateData {
+     text-decoration: underline;
+ }
+ /* Job application */
+ 
+ #JobApp {
+     border: 2px solid khaki;
+     width: 60%;
+     margin: 3.4em auto;
+     background-color: indianred;
+     font-family: Arial, Helvetica, sans-serif;
+     color: #311;
+ }
+ 
+ #JobApp div,
+ p {
+     padding: 1.3em;
+     text-align: justify;
+ }
+ 
+ #JobApp ul {
+     padding-left: 3.4em;
+     list-style: disc;
+ }
+ 
+ #JobApp h1 {
+     text-decoration: underline;
+     text-align: center;
+     text-transform: uppercase;
+ }
+ 
+ #positions p {
+     text-align: center;
+     font-weight: bold;
+     text-decoration: underline;
+ }
+ 
+ #job_form {
+     padding: 2.1em;
+ }
+ 
+ #nameFull {
+     margin: 0, auto;
+ }
+ 
+ #job_form input[type=text],
+ input[type=email],
+ input[type=date] {
+     height: 2.1em;
+     display: block;
+     width: 100%;
+     border: 1px solid darkblue
+ }
+ 
+ .additional_info {
+     display: inline-block;
+     width: 100%;
+     box-sizing: border-box;
+ }
+ 
+ .right_float {
+     padding: 0;
+     float: right;
+     width: 40%;
+     text-align: left;
+ }
+ 
+ .left_float {
+     padding: 0;
+     float: left;
+     text-align: left;
+     width: 40%;
+ }
+ 
+ #I_want_to_work_as {
+     padding-left: 2.1em;
+     font-weight: bold;
+ }
+ 
+ #radio {
+     display: inline-block;
+     width: 100%;
+     box-sizing: border-box;
+ }
+ 
+ #radio p {
+     padding: 0;
+     float: left;
+     width: 33%;
+ }
+ 
+ #job_form button {
+     display: block;
+     background-color: cornflowerblue;
+     border: 1px solid blue;
+     border-radius: 10px;
+     margin: 0 auto;
+     color: #fff;
+     font-size: 0.8em;
+     padding: 0.5em 3.4em;
+ }
+ 
+ @media (max-width:850px) {
+     #JobApp {
+         width: 90%;
+         margin: 0.8em auto;
+     }
+     #job_form {
+         padding: 1.3em;
+     }
+     .right_float {
+         width: 100%;
+         text-align: left;
+     }
+     .left_float {
+         width: 100%;
+         margin-bottom: 2.1em;
+         text-align: left;
+     }
+     #JobApp div,
+     p {
+         padding-top: 0.8em;
+         text-align: justify;
+     }
  }
