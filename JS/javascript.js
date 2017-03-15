@@ -47,58 +47,57 @@ var product29 = new Product("САНДВИЧ МЕДИТЕРАНЕО","sandwich",6
 var menuButtons = document.querySelectorAll("#menuPageHeader nav button,#menuPageHeader nav img");
  
  
-    for (var index=0;index<productsMenuList.length;index++) {
-            var productDiv =  document.createElement("div");
-            productDiv.className = "productDiv";
-            var imageDiv = document.createElement("div");
-            productDiv.appendChild(imageDiv);
-            imageDiv.className = "imageDiv";
-            var img = document.createElement("img");
-            img.src = productsMenuList[index].imgSrc;
-            imageDiv.appendChild(img);
-            var text = document.createTextNode(productsMenuList[index].productName);
-            var heading =  document.createElement("h1");
-            productDiv.appendChild(heading); 
-            heading.appendChild(text);
-            heading.className = "heading";
-            heading.style.left = "10px";
-            productDiv.appendChild(document.createElement("hr"));
-            var ingredientsDiv = document.createElement("div");
-            productDiv.appendChild(ingredientsDiv);
-            var ingredientsText = document.createTextNode(productsMenuList[index].ingredients);
-            var ingredients = document.createElement("p");
-            ingredientsDiv.className = "ingredientsDiv";
-            ingredientsDiv.appendChild(ingredients);
-         
-            ingredients.appendChild(ingredientsText);
-                var button = document.createElement("button");
-                button.product = productsMenuList[index];
-                button.onclick = function() {
-                currentUser.cart.push(this.product);
-                console.log(currentUser.cart);
-    }
-            button.className = "BuyThis";
-            button.innerHTML = "ПОРЪЧАЙ";
-            productDiv.appendChild(button);
+for (var index=0;index<productsMenuList.length;index++) {
+        var productDiv =  document.createElement("div");
+        productDiv.className = "productDiv";
+        var imageDiv = document.createElement("div");
+        productDiv.appendChild(imageDiv);
+        imageDiv.className = "imageDiv";
+        var img = document.createElement("img");
+        img.src = productsMenuList[index].imgSrc;
+        imageDiv.appendChild(img);
+        var text = document.createTextNode(productsMenuList[index].productName);
+        var heading =  document.createElement("h1");
+        productDiv.appendChild(heading); 
+        heading.appendChild(text);
+        heading.className = "heading";
+        heading.style.left = "10px";
+        productDiv.appendChild(document.createElement("hr"));
+        var ingredientsDiv = document.createElement("div");
+        productDiv.appendChild(ingredientsDiv);
+        var ingredientsText = document.createTextNode(productsMenuList[index].ingredients);
+        var ingredients = document.createElement("p");
+        ingredientsDiv.className = "ingredientsDiv";
+        ingredientsDiv.appendChild(ingredients);     
+        ingredients.appendChild(ingredientsText);
+        var button = document.createElement("button");
+        button.product = productsMenuList[index];
+        button.onclick = function() {
+            currentUser.cart.push(this.product);
+            console.log(currentUser.cart);
+        }
+        button.className = "BuyThis";
+        button.innerHTML = "ПОРЪЧАЙ";
+        productDiv.appendChild(button);
           
-               if(productsMenuList[index].productType === "pizza") {
-                    document.getElementById("pizzaGallery").appendChild(productDiv);
+        if(productsMenuList[index].productType === "pizza") {
+                document.getElementById("pizzaGallery").appendChild(productDiv);
 
-               }
-              if(productsMenuList[index].productType === "pasta")  {
-                    document.getElementById("pastaGallery").appendChild(productDiv);
-              }          
-               if(productsMenuList[index].productType === "sandwich")  {
-                    document.getElementById("sandwichGallery").appendChild(productDiv);                     
         }
-               if(productsMenuList[index].productType === "salad")  {
-                    document.getElementById("saladGallery").appendChild(productDiv);                     
+        if(productsMenuList[index].productType === "pasta")  {
+                document.getElementById("pastaGallery").appendChild(productDiv);
+        }          
+        if(productsMenuList[index].productType === "sandwich")  {
+                document.getElementById("sandwichGallery").appendChild(productDiv);                     
         }
-               if(productsMenuList[index].productType === "desert")  {
-                    document.getElementById("desertGallery").appendChild(productDiv);                     
+        if(productsMenuList[index].productType === "salad")  {
+                document.getElementById("saladGallery").appendChild(productDiv);                     
         }
-               if(productsMenuList[index].productType === "drinks")  {
-                    document.getElementById("drinksGallery").appendChild(productDiv);                     
+        if(productsMenuList[index].productType === "desert")  {
+                document.getElementById("desertGallery").appendChild(productDiv);                     
+        }
+        if(productsMenuList[index].productType === "drinks")  {
+                document.getElementById("drinksGallery").appendChild(productDiv);                     
         }
     }
  document.getElementById("salad").onclick = function (){
@@ -221,10 +220,10 @@ setInterval(function() {
 //sticky header
 (function($) {          
     $(document).ready(function(){                    
-        $(window).scroll(function(){                          
+         $(window).scroll(function(){                          
             if ($(this).scrollTop() >1) {
                 var header = document.getElementById("menu");
-                        header.style.backgroundColor = "rgba(154,205,50,0.8)";
+                         header.style.backgroundColor = "rgba(154,205,50,0.8)";
                          header.style.transition =  "all 0.7s ease-in";
                 $('#menu').fadeIn(1000);
             } else {
@@ -260,46 +259,45 @@ var popUp = function ()  {
 }
 
 document.getElementById("sale").onclick =  function () {
-document.getElementById("popUp").style.display="inline-block";
+        document.getElementById("popUp").style.display="inline-block";
 }
 
 var arr  = document.querySelectorAll("#offer_con  button");
 Array.prototype.forEach.call(arr,function (element) {
-    element.addEventListener('click', function () {
-    document.getElementById("popUp").style.display="inline-block";
+        element.addEventListener('click', function () {
+        document.getElementById("popUp").style.display="inline-block";
     },false);
 });
      
  
 
 $(document).keyup(function(e) {
-    if (e.keyCode == 27) {  document.getElementById("popUp").style.display="none"; }   
-    if (e.keyCode == 27) {  document.getElementById("restaurantDiv").style.display="none";}   
-    if (e.keyCode == 27) {  document.getElementById("registrationWrapper").style.display="none";}    
-    if (e.keyCode == 27) {  document.getElementById("myDropdownDiv").style.display="none";}    
-    if (e.keyCode == 27) {  document.getElementById("userMenu").style.display="none";}    
+        if (e.keyCode == 27) {  document.getElementById("popUp").style.display="none"; }   
+        if (e.keyCode == 27) {  document.getElementById("restaurantDiv").style.display="none";}   
+        if (e.keyCode == 27) {  document.getElementById("registrationWrapper").style.display="none";}    
+        if (e.keyCode == 27) {  document.getElementById("myDropdownDiv").style.display="none";}    
+        if (e.keyCode == 27) {  document.getElementById("userMenu").style.display="none";}    
  
 });
  
     
 document.getElementById("menuButton").onclick = function () { 
-    document.getElementById("restaurantDiv").style.display = "block";   
-    document.getElementById("myDropdownDiv").style.display = "none"   ;
-    document.getElementById("registrationWrapper").style.display="none";
-    document.getElementById("popUp").style.display="none";
+        document.getElementById("restaurantDiv").style.display = "block";   
+        document.getElementById("myDropdownDiv").style.display = "none"   ;
+        document.getElementById("registrationWrapper").style.display="none";
+        document.getElementById("popUp").style.display="none";
         
 }
 document.getElementById("menuButton2").onclick = function () { 
-    document.getElementById("restaurantDiv").style.display = "inline-block";
-    document.getElementById("myDropdownDiv").style.display = "none"   ;
-    document.getElementById("registrationWrapper").style.display="none";
-    document.getElementById("popUp").style.display="none";
+        document.getElementById("restaurantDiv").style.display = "inline-block";
+        document.getElementById("myDropdownDiv").style.display = "none"   ;
+        document.getElementById("registrationWrapper").style.display="none";
+        document.getElementById("popUp").style.display="none";
 }
 
 document.getElementById("close").setAttribute("onclick","closePopUp()");
-    var closePopUp = function  () {
-    document.getElementById("popUp").style.display="none";
-        
+        var closePopUp = function  () {
+        document.getElementById("popUp").style.display="none";          
 }
  
  // za click na backgrounda da iuzchgezvat prozrocite  ? ?  ? sas stopimeddiatepropagation 
@@ -321,211 +319,207 @@ document.getElementById("close").setAttribute("onclick","closePopUp()");
 
 document.getElementById("close2").setAttribute("onclick","closeRegForm()")  
 var closeRegForm = function  ( )  {
-    document.getElementById("registrationWrapper").style.display = "none";
+        document.getElementById("registrationWrapper").style.display = "none";
  
 }
   
 document.getElementById("close3").onclick = function () { 
-    document.getElementById("restaurantDiv").style.display = "none";
+        document.getElementById("restaurantDiv").style.display = "none";
 }
   
 var clicks = 0;
 document.getElementById("dropdown").onclick = function () {
-    clicks++;
-    if (clicks%2==1) { 
-        document.getElementById("myDropdownDiv").style.display = "inline-block"; 
-        document.getElementById("restaurantDiv").style.display = "none";   
-        document.getElementById("registrationWrapper").style.display="none";
-        document.getElementById("popUp").style.display="none";
-    }
-    if (clicks%2==0) {
-        document.getElementById("myDropdownDiv").style.display = "none"; 
-    }
+        clicks++;
+        if (clicks%2==1) { 
+            document.getElementById("myDropdownDiv").style.display = "inline-block"; 
+            document.getElementById("restaurantDiv").style.display = "none";   
+            document.getElementById("registrationWrapper").style.display="none";
+            document.getElementById("popUp").style.display="none";
+        }
+        if (clicks%2==0) {
+            document.getElementById("myDropdownDiv").style.display = "none"; 
+        }
 }
 
 document.getElementById("slideshow").onclick = function() {
-     document.getElementById("myDropdownDiv").style.display = "none"; 
+        document.getElementById("myDropdownDiv").style.display = "none"; 
 }
  
 document.getElementById("registration").onclick = function () { 
-    document.getElementById("popUp").style.display = "none";
-    document.getElementById("registrationWrapper").style.display = "unset";
-
+        document.getElementById("popUp").style.display = "none";
+        document.getElementById("registrationWrapper").style.display = "unset";
 }
 
 // validacii registracionna forma 
- var allowSubmit = false;
+var allowSubmit = false;
 // validaciq za daljina na parolata
 document.getElementById("pass").onblur = function () {
-    var passMessage  = document.getElementById("passMessage");
-    var password = document.getElementById("pass");
-    if (password.value.length<6) {   
-        var text =  document.createTextNode("Моля, въведете парола с поне 6 символа!");
-        passMessage.appendChild(text);
-    }
+        var passMessage  = document.getElementById("passMessage");
+        var password = document.getElementById("pass");
+        if (password.value.length<6) {   
+            var text =  document.createTextNode("Моля, въведете парола с поне 6 символа!");
+            passMessage.appendChild(text);
+        }
 }
 
 //da se obhodqt s forEach i da im se zakachat listeneri
 document.getElementById("passConfirm").onfocus = function () {
-    document.getElementById("passMessage").innerHTML  ="";
-    document.getElementById("emailMessage").innerHTML  ="";
-    document.getElementById("nameMessage").innerHTML  ="";
-    document.getElementById("passConfirm").value  ="";
+        document.getElementById("passMessage").innerHTML  ="";
+        document.getElementById("emailMessage").innerHTML  ="";
+        document.getElementById("nameMessage").innerHTML  ="";
+        document.getElementById("passConfirm").value  ="";
 }
 document.getElementById("pass").onfocus = function () {
-    document.getElementById("passMessage").innerHTML  ="";
-    document.getElementById("emailMessage").innerHTML  ="";
-    document.getElementById("nameMessage").innerHTML  ="";
-    document.getElementById("pass").value  ="";
+        document.getElementById("passMessage").innerHTML  ="";
+        document.getElementById("emailMessage").innerHTML  ="";
+        document.getElementById("nameMessage").innerHTML  ="";
+        document.getElementById("pass").value  ="";
 }
 document.getElementById("email").onfocus = function () {
-    document.getElementById("passMessage").innerHTML  ="";
-    document.getElementById("emailMessage").innerHTML  ="";
-    document.getElementById("nameMessage").innerHTML  ="";
-    document.getElementById("email").value  ="";
+        document.getElementById("passMessage").innerHTML  ="";
+        document.getElementById("emailMessage").innerHTML  ="";
+        document.getElementById("nameMessage").innerHTML  ="";
+        document.getElementById("email").value  ="";
 }
 document.getElementById("firstName").onfocus = function () {
-    document.getElementById("passMessage").innerHTML  ="";
-    document.getElementById("emailMessage").innerHTML  ="";
-    document.getElementById("nameMessage").innerHTML  ="";
-    document.getElementById("firstName").value  ="";
+        document.getElementById("passMessage").innerHTML  ="";
+        document.getElementById("emailMessage").innerHTML  ="";
+        document.getElementById("nameMessage").innerHTML  ="";
+        document.getElementById("firstName").value  ="";
 }
 
  document.getElementById("lastName").onfocus  = function (){
-    document.getElementById("lastName").value  ="";
+        document.getElementById("lastName").value  ="";
 }
 ////da se obhodqt s forEach i da im se zakachat listeneri
 
 // blokirane na butona submit
  document.querySelector("#registrationWrapper button[type=submit]").onclick = function (event) {
-     var password = document.getElementById("pass");
-     var passConfirm = document.getElementById("passConfirm");
-     if (password.value.length>=6 && passConfirm.value===password.value){ 
-        allowSubmit = true;
-     }
-     if (!allowSubmit) {
-        event.preventDefault();
-    }
+        var password = document.getElementById("pass");
+        var passConfirm = document.getElementById("passConfirm");
+        if (password.value.length>=6 && passConfirm.value===password.value){ 
+            allowSubmit = true;
+        }
+        if (!allowSubmit) {
+            event.preventDefault();
+        }
  }
 
  var restaurants = document.getElementById("restaurantList");
  restaurants.onchange = function () {
-     document.getElementById("landingPage").style.display="none";
-     document.getElementById("restaurantDiv").style.display= "none";
-     document.getElementById("menuPageHeader").style.display = "unset";
+        document.getElementById("landingPage").style.display="none";
+        document.getElementById("restaurantDiv").style.display= "none";
+        document.getElementById("menuPageHeader").style.display = "unset";
+        document.getElementById("pizzaGallery").style.display = "flex";
  }
 
 var userList = [];
 document.querySelector("#registrationWrapper button[type=submit]").onclick = function (event) {
-    event.preventDefault();
-    var password = document.getElementById("pass");
-    var passConfirm = document.getElementById("passConfirm");
-    var email = document.getElementById("email");
-    var emailFlag = false;
-    var firstName = document.getElementById("firstName");
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var flag = re.test(email.value);
-    var regexp = /^[A-z]+$/;
-    regexp.test(firstName.value);
-    for (var key in userList) {
-        if( userList[key].email === email.value) {
-                document.getElementById("welcomeMessage").style.display = "block";
-                document.querySelector("#welcomeMessage h1").innerHTML = "Този email е зает!" ; 
-                emailFlag = true;
+        event.preventDefault();
+        var password = document.getElementById("pass");
+        var passConfirm = document.getElementById("passConfirm");
+        var email = document.getElementById("email");
+        var emailFlag = false;
+        var firstName = document.getElementById("firstName");
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var flag = re.test(email.value);
+        var regexp = /^[A-z]+$/;
+        regexp.test(firstName.value);
+        for (var key in userList) {
+            if( userList[key].email === email.value) {
+                    document.getElementById("welcomeMessage").style.display = "block";
+                    document.querySelector("#welcomeMessage h1").innerHTML = "Този email е зает!" ; 
+                    emailFlag = true;
             }
         }
                 // proverka za sashtestvuvasht email
-    if (password.value.length>=6 && passConfirm.value===password.value &&  regexp.test(firstName.value) && firstName.value.length>1 && regexp.test(lastName.value) && lastName.value.length>1 &&
-    re.test(email.value) && emailFlag == false ) {     // proverka za verni poleta 
-        var user = {
-        firstName: document.getElementById("firstName").value,
-        lastName: document.getElementById("lastName").value,
-        email:document.getElementById("email").value,
-        password: document.getElementById("pass").value,
-        cart : []
-     }
-    userList.push(user);
-    document.getElementById("welcomeMessage").style.display = "block";
-    document.querySelector("#welcomeMessage h1").innerHTML = "Поздравления " + user.firstName + " ! Вашата регистрация беше успешна. ";
-    event.preventDefault();
-    document.getElementById("registrationWrapper").style.display ="none";
-    document.getElementById("popUp").style.display ="block";
-    }
+        if (password.value.length>=6 && passConfirm.value===password.value &&  regexp.test(firstName.value) && firstName.value.length>1 && regexp.test(lastName.value) && lastName.value.length>1 &&
+        re.test(email.value) && emailFlag == false ) {     // proverka za verni poleta 
+            var user = {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            email:document.getElementById("email").value,
+            password: document.getElementById("pass").value,
+            cart : []
+        }
+        userList.push(user);
+        document.getElementById("welcomeMessage").style.display = "block";
+        document.querySelector("#welcomeMessage h1").innerHTML = "Поздравления " + user.firstName + " ! Вашата регистрация беше успешна. ";
+        event.preventDefault();
+        document.getElementById("registrationWrapper").style.display ="none";
+        document.getElementById("popUp").style.display ="block";
+        }
 
-    //messages
-    var nameMessage = document.getElementById("nameMessage")
-    var firstName = document.getElementById("firstName");
-    var regexp = /^[A-z]+$/;
-    var test = regexp.test(firstName.value);
-    if (!test  ) {
-        var text = document.createTextNode("Моля, въведете валидни имена!")
-        nameMessage.appendChild(text);
-    }
-    var email = document.getElementById("email");
-    var emailMessage = document.getElementById("emailMessage");
-    var text =  document.createTextNode("Въведете валиден email!!");
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var flag = re.test(email.value);
-    if (!flag) {
-        emailMessage.appendChild(text);
-    }
-    var passMessage  = document.getElementById("passMessage");
-    var password = document.getElementById("pass");
-    if (password.value.length<6) {   
-    var text =  document.createTextNode("Моля, въведете парола с поне 6 символа!");
-    passMessage.appendChild(text);  
-    }
-    var password = document.getElementById("pass");
-    var passMessage  = document.getElementById("passMessage");
-    var passConfirm = document.getElementById("passConfirm");
-    if (password.value !== passConfirm.value) {
-    var text =  document.createTextNode("Паролите не съвпадат!");
-    passMessage.appendChild(text);
-    }
+        //messages
+        var nameMessage = document.getElementById("nameMessage")
+        var firstName = document.getElementById("firstName");
+        var regexp = /^[A-z]+$/;
+        var test = regexp.test(firstName.value);
+        if (!test  ) {
+            var text = document.createTextNode("Моля, въведете валидни имена!")
+            nameMessage.appendChild(text);
+        }
+        var email = document.getElementById("email");
+        var emailMessage = document.getElementById("emailMessage");
+        var text =  document.createTextNode("Въведете валиден email!!");
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var flag = re.test(email.value);
+        if (!flag) {
+            emailMessage.appendChild(text);
+        }
+        var passMessage  = document.getElementById("passMessage");
+        var password = document.getElementById("pass");
+        if (password.value.length<6) {   
+            var text =  document.createTextNode("Моля, въведете парола с поне 6 символа!");
+            passMessage.appendChild(text);  
+        }
+        var password = document.getElementById("pass");
+        var passMessage  = document.getElementById("passMessage");
+        var passConfirm = document.getElementById("passConfirm");
+        if (password.value !== passConfirm.value) {
+            var text =  document.createTextNode("Паролите не съвпадат!");
+            passMessage.appendChild(text);
+        }
 }
 
- document.getElementById("welcomeMessage").onclick = function () {
-     document.getElementById("welcomeMessage").style.display = "none";   // za zatvarqne na welcome message-a 
+document.getElementById("welcomeMessage").onclick = function () {
+        document.getElementById("welcomeMessage").style.display = "none";   // za zatvarqne na welcome message-a 
  }
 
 document.getElementById("enter").onclick = function () { 
-    console.log(userList);
-    var email = document.querySelector("#popUp input[type=email]");
-    var pass = document.querySelector("#popUp input[type=password]");
-    for (var index=0;index<userList.length;index++) {
-        for (var key in userList)  {
+        console.log(userList);
+        var email = document.querySelector("#popUp input[type=email]");
+        var pass = document.querySelector("#popUp input[type=password]");
+        for (var index=0;index<userList.length;index++) {
+            for (var key in userList)  {
                 if (email.value==userList[key].email && pass.value==userList[key].password) {
-                document.getElementById("welcomeMessage").style.display = "block";
-                document.querySelector("#welcomeMessage h1").innerHTML = "Welcome " + userList[key].firstName + " !";
-                document.getElementById("popUp").style.display = "none";
-                document.getElementById("userIcon").style.display = "inline";
-                loggedInUser=true;
-                currentUser = userList[index];
-                console.log(currentUser);
-                
-        }
-        else {
-            document.getElementById("welcomeMessage").style.display = "block";
-            document.querySelector("#welcomeMessage h1").innerHTML = "Грешен email или парола!" 
+                    document.getElementById("welcomeMessage").style.display = "block";
+                    document.querySelector("#welcomeMessage h1").innerHTML = "Welcome " + userList[key].firstName + " !";
+                    document.getElementById("popUp").style.display = "none";
+                    document.getElementById("userIcon").style.display = "inline";
+                    loggedInUser=true;
+                    currentUser = userList[index];
+                }
+                else {
+                    document.getElementById("welcomeMessage").style.display = "block";
+                    document.querySelector("#welcomeMessage h1").innerHTML = "Грешен email или парола!" 
+                }
             }
         }
-    }
 }
 
 document.getElementById("logOut").onclick = function () {
-    loggedInUser = false;
-    document.getElementById("userIcon").style.display = "none";
-    document.getElementById("userMenu").style.display = "none";
+        loggedInUser = false;
+        document.getElementById("userIcon").style.display = "none";
+        document.getElementById("userMenu").style.display = "none";
 // tova e za butona zapomni me
-    if (document.getElementById("rememberMe").checked === false) {
-        document.querySelector("#popUp input[type=password]").value = "";
-        document.querySelector("#popUp input[type=email]").value = "";   
+        if (document.getElementById("rememberMe").checked === false) {
+            document.querySelector("#popUp input[type=password]").value = "";
+            document.querySelector("#popUp input[type=email]").value = "";   
     }
 }
- 
- 
 // user ikona 
 document.getElementById("userIcon").onclick = function () {
-    document.getElementById("userMenu").style.display = "unset";
+        document.getElementById("userMenu").style.display = "unset";
 }
 
