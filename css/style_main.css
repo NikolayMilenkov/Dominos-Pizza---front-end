@@ -29,7 +29,7 @@
     height:120px;
     width:100%;
     background-color: transparent;
-    z-index:1;
+    z-index:100;
     position:fixed;
  
 }
@@ -106,6 +106,30 @@ a {
    display: none;
 }
 
+#userIcon {
+    width: 5%;
+    display: inline;
+    display:none;
+    position: relative;
+    right:2%;
+    top:35%;
+    float:right;
+}
+
+#userMenu {
+     width: 250px;
+   height: 300px;
+ border: 1px solid black;
+ background-color: rgba(154,205,50,0.7);
+ top:130px;
+ display:none;
+ left:40%;
+   position: absolute;
+   margin-right:5px;
+   z-index: 100;
+}
+
+
  #dropdown  {
    top: 40px;
       width:7%;
@@ -115,7 +139,7 @@ a {
 margin:2px 10px;
  }
 
-#dropdown:hover,#cart:hover { 
+#dropdown:hover,#cart:hover,#userIcon:hover { 
   transform: scale(1.1);
   box-shadow: 2px 2px 2px 1px black;
 }
@@ -186,7 +210,7 @@ nav ul  button, #menuButton  {
    display: none;
    position:fixed;
    left:25%;
-   z-index: 10;
+   z-index: 180;
    top:20%;
     border-radius: 10px;
     animation: flyin 1.2s ease forwards;
@@ -298,10 +322,6 @@ nav ul  button, #menuButton  {
    #menuPageHeader nav div  { 
        display: block;
        margin:0 auto;
- 
- 
- 
-
    }
 
  nav ul {
@@ -342,14 +362,14 @@ float:right;
    display: none;
  border: 1px solid black;
  background-color: rgba(154,205,50,0.7);
- 
- top:130px;
-   position: relative;
+  
+  float: right;
+   position: fixed;
    margin-right:5px;
-   z-index: 100;
-   
+   z-index: 102220;
  }
- #myDropdownDiv ul {
+
+ #myDropdownDiv ul,#userMenu ul {
    position: relative;
    width:300px;
    display: block;
@@ -359,7 +379,7 @@ float:right;
    top:15%;
  }
 
- #myDropdownDiv ul li  { 
+ #myDropdownDiv ul li,#userMenu ul li  { 
    display:block;
    margin: 20px auto;
    position: relative;
@@ -375,7 +395,7 @@ float:right;
     text-shadow: 10px 13px 12px  black;
    font-weight: bold;
   }
-   #myDropdownDiv ul li button  {
+   #myDropdownDiv  button, #userMenu button  {
   border-radius: 15px;
   font-family: cursive;
   background-color: transparent;
@@ -387,7 +407,7 @@ float:right;
   box-shadow: 0 1px 1px 0 black;
    }
 
-   #myDropdownDiv ul li button:hover {
+   #myDropdownDiv  button:hover,#userMenu button:hover{
      transform: scale(1.1);
      box-shadow:2px 2px 2px 0 black;
    }
@@ -414,7 +434,7 @@ width: 50%;
 position: absolute;
 left: 25%;
 top: 200px;
-z-index:100;
+z-index:1020;
 display: none;
 animation: flyin 1s ease forwards;
     filter: blur(3px);
@@ -518,8 +538,10 @@ animation: flyin 1s ease forwards;
     height: 80px;
  display:none;
  width: 100%;
-    position:absolute;
+    position:fixed;
  top:120px;
+ z-index:100;
+ 
     background-color:rgba(154,205,50,0.8) ;
 }
 #menuPageHeader nav {
@@ -566,6 +588,11 @@ position: relative;
     text-shadow: 2px 2px 3px black;
     box-shadow: 2px 1px 3px 2px black;
 }
+#menuPageHeader nav button:active {
+    transform: scale(1.3);
+    text-shadow: 2px 2px 3px black;
+    box-shadow: 2px 1px 3px 2px black;
+}
 
  #menuPageHeader label {
   display: block;
@@ -582,24 +609,14 @@ position: relative;
   top: -1px;
 }
 
-#menuPageSubHeader {
-   
-    width: 100%;
-    background-color:rgba(154,205,50,0.8) ;
-  color:white;
-  font-family: cursive;
-  font-weight: bold;
-  font-size:1.2em;
-  bottom: 5%;
-  position: relative;
-}
+ 
+ 
 
 
- #gallery { 
+ 
+#pizzaGallery,#pastaGallery,#drinksGallery,#saladGallery,#desertGallery,#sandwichGallery { 
   padding: .5vw;
-  font-size: 0;
-  width: 80%;
-  margin:0 auto;
+  font-size: 15px;
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: column;
@@ -607,20 +624,75 @@ position: relative;
   flex-flow: row wrap; 
   display: -webkit-box;
   display: flex;
+  flex-basis: 0;
+left:5%;
+ margin:0 auto;
+position: relative;
+  margin: 250px auto 0 auto;
 }
- #gallery div { 
+
+#pastaGallery,#drinksGallery,#saladGallery,#desertGallery,#sandwichGallery {
+    display:none;
+}
+
+#pizzaGallery .productDiv, #pastaGallery .productDiv, #drinksGallery .productDiv, #saladGallery .productDiv,#desertGallery .productDiv, #sandwichGallery .productDiv { 
   -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto; 
-  width: 200px; 
-  margin: .5vw; 
+  margin: 20px ;
+    width: 200px;
+  height:  220px;
+flex-grow: 0;
+  background-color:rgba(255,255,255, 0.5);
+  border-radius: 10px;
 }
- #gallery div img { 
+#pizzaGallery .productDiv img,#pastaGallery .productDiv img, #drinksGallery .productDiv img, #saladGallery .productDiv img, #desertGallery .productDiv img, #sandwichGallery .productDiv img { 
   width: 100%; 
-  height: auto; 
+  height: auto;
 }
- 
 
+#pastaGallery .productDiv img {
+    width:80%;
+    left:10%;
+    position:relative;
+}
+#pastaGallery .productDiv img:nth-child(3) {
+    width:90%;
+    left:10%;
+    position:relative;
+}
+#pastaGallery .productDiv { 
+    height: 300px;
+}
+
+   .heading {
+  margin:auto;
+    line-height:51px;
+    vertical-align:middle;
+    color:red
+}
+
+
+
+@media screen and (max-width: 300px) {
+#pizzaGallery .productDiv { margin: 0; min-width: 20; }
+#pizzaGallery { padding: 0; }  
+}
+
+.productDiv button {
+     letter-spacing: 1px;
+     margin-bottom: 5px;
+     background-color: rgba(154,205,50,1);;
+border-radius: 10px;
+     box-shadow:1px 1px 1px 1px black;
+     height:25px;
+     width: 100px;
+     color: #fff;
+     position: relative;     /*ne moga da gi fiksiram tezi butoni pri resize WHYYYYYYYYYYYY ????*/
+   top:28.5%;
+     left: 25%;
+     z-index:50;
+}
 
 
  
@@ -660,6 +732,8 @@ position: relative;
      background-size: 51% 51%;
      background-repeat: no-repeat;
  }
+
+ 
  
  #tableSale {
      width: 100%;
@@ -779,11 +853,15 @@ position: relative;
      font-size: 1.1em;
  }
  
- figcaption>button {
+ #offer figcaption>button {
      letter-spacing: 1px;
+     margin-bottom: 5px;
      background-color: limegreen;
-     font-size: 1.3em;
-     padding: 0.5em;
+     font-size: 1em;
+     border-color:green;
+     box-shadow:1px 1px 1px 1px black;
+     height:50px;
+     width: 150px;
      color: #fff;
  }
  
