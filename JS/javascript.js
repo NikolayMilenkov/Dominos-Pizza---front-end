@@ -8,7 +8,7 @@ function Product (productName,productType,price,ingredients,imgSrc) {
     this.imgSrc = imgSrc;
     productsMenuList.push(this);
 }
-
+var loggedInUser = false;
 var product1 = new Product("МЕДИТЕРАНЕО","pizza",11.5,"Доматен сос, Краве сирене, Моцарела, Пресни зелени чушки, Пресни домати, Черни маслини","https://www.dominos.bg/gallery/fmobile/1290medium.png");
 var product2 = new Product("АЛФРЕДО","pizza",12,"Сметана, Моцарела, Пиле, Бейби Спанак","https://www.dominos.bg/gallery/fmobile/1291medium.png");
 var product3 = new Product("ВИТА","pizza",13,"Доматен сос, Моцарела, Краве сирене, Пресни домати, Бейби Спанак","https://www.dominos.bg/gallery/fmobile/1292medium.png");
@@ -33,14 +33,12 @@ var product20 = new Product("САЛАТА РИБА ТОН","salad",7.5,"Смет
 
 var product21 = new Product("COCA COLA","drinks",1.5,"","images/cocacola.png");
 var product22 = new Product("SPRITE","drinks",1.5,"","images/sprite.gif");
-var product23 = new Product("FANTA","drinks",1.5,"","images/fanta.png");
-var product24 = new Product("ZAGORKA","drinks",2.5,"","images/zagorka.png");
-var product25 = new Product("HEINEKEN","drinks",2.5,"","images/heineken.png");
+var product24 = new Product("PEPSI","drinks",2.5,"","images/zagorka.png");
+ 
  
 var product26 = new Product("ЧОКО","desert",7.5,"Пухкав десерт с пълнеж NUTELLA, прясно изпечен на фурна и поръсен с пудра захар","https://www.dominos.bg/gallery/fmobile/1204ipar.png");
 var product27 = new Product("ШОКОЛАДОВО СУФЛЕ","desert",5.5,"Топло шоколадово кексче с пълнеж от разтопен шоколад","https://www.dominos.bg/gallery/fmobile/1228ipar.png");
-var product28= new Product("NIRVANA PRALINES","desert",11.5,"Сладолед с карамелов сироп и карамелизирани ядки ","https:////www.dominos.bg/gallery/fmobile/1307ipar.png");
-var product29 = new Product("МИНИ ПАЛАЧИНКИ","desert",4.5," 12 пухкави мини палачинки с парченца шоколад, поръсени с пудра захар","https:///www.dominos.bg/gallery/fmobile/1101ipar.png");
+var product29 = new Product("СЛАДОЛЕД","desert",4.5," 12 пухкави мини палачинки с парченца шоколад, поръсени с пудра захар","https://www.dominos.bg/gallery/fmobile/1336ipar.png");
 
 var product27 = new Product("САНДВИЧ ПЕПЕРОНИ","sandwich",4.5," дом. сос, ементал, сирене Филаделфия, пеперони","https:////www.dominos.bg/gallery/fmobile/1472ipar.png");
 var product28= new Product("САНДВИЧ ПИЛЕ","sandwich",5.5,"сос барбекю, ементал, пилешко филе, бекон","https:////www.dominos.bg/gallery/fmobile/1471ipar.png");
@@ -52,18 +50,33 @@ var menuButtons = document.querySelectorAll("#menuPageHeader nav button,#menuPag
     for (var index=0;index<productsMenuList.length;index++) {
             var productDiv =  document.createElement("div");
             productDiv.className = "productDiv";
+            var imageDiv = document.createElement("div");
+            productDiv.appendChild(imageDiv);
+            imageDiv.className = "imageDiv";
             var img = document.createElement("img");
             img.src = productsMenuList[index].imgSrc;
-            productDiv.appendChild(img);
-        //     var text = document.createTextNode(productsMenuList[index].productName);
-        //    var heading =  document.createElement("h1").appendChild(text);
-        //    heading.className = "heading";
-        //     productDiv.appendChild(heading);  //??????????????
-        //     productDiv.appendChild(document.createElement("hr"));
-
-        //       var ingredients = document.createTextNode(productsMenuList[index].ingredients);
-        //     productDiv.appendChild(document.createElement("p").appendChild(ingredients));
-             var button = document.createElement("button");
+            imageDiv.appendChild(img);
+            var text = document.createTextNode(productsMenuList[index].productName);
+            var heading =  document.createElement("h1");
+            productDiv.appendChild(heading); 
+            heading.appendChild(text);
+            heading.className = "heading";
+            heading.style.left = "10px";
+            productDiv.appendChild(document.createElement("hr"));
+            var ingredientsDiv = document.createElement("div");
+            productDiv.appendChild(ingredientsDiv);
+            var ingredientsText = document.createTextNode(productsMenuList[index].ingredients);
+            var ingredients = document.createElement("p");
+            ingredientsDiv.className = "ingredientsDiv";
+            ingredientsDiv.appendChild(ingredients);
+         
+            ingredients.appendChild(ingredientsText);
+                var button = document.createElement("button");
+                button.product = productsMenuList[index];
+                button.onclick = function() {
+                currentUser.cart.push(this.product);
+                console.log(currentUser.cart);
+    }
             button.className = "BuyThis";
             button.innerHTML = "ПОРЪЧАЙ";
             productDiv.appendChild(button);
@@ -223,18 +236,27 @@ setInterval(function() {
 })(jQuery);
 //sticky header
 
-var loggedInFlag = false;
+ 
+currentUser = {};
 var cart = document.getElementById("cart");
 var orderButton1 = document.getElementById("orderButton1");
 var orderButton2 = document.getElementById("orderButton2");
 orderButton1.setAttribute("onclick","popUp()");
 orderButton2.setAttribute("onclick","popUp()");
-cart.setAttribute("onclick","popUp()");
+cart.onclick = function (){
+        if(loggedInUser===true){
+        alert("gei");
+        console.log(loggedInUser);
+        }
+        if(loggedInUser===false){
+            popUp();
+        }
+}
 var popUp = function ()  {
-document.getElementById("popUp").style.display="inline-block";
-document.getElementById("myDropdownDiv").style.display = "none";
-document.getElementById("restaurantDiv").style.display = "none";   
-document.getElementById("registrationWrapper").style.display="none";  
+        document.getElementById("popUp").style.display="inline-block";
+        document.getElementById("myDropdownDiv").style.display = "none";
+        document.getElementById("restaurantDiv").style.display = "none";   
+        document.getElementById("registrationWrapper").style.display="none";  
 }
 
 document.getElementById("sale").onclick =  function () {
@@ -255,6 +277,7 @@ $(document).keyup(function(e) {
     if (e.keyCode == 27) {  document.getElementById("restaurantDiv").style.display="none";}   
     if (e.keyCode == 27) {  document.getElementById("registrationWrapper").style.display="none";}    
     if (e.keyCode == 27) {  document.getElementById("myDropdownDiv").style.display="none";}    
+    if (e.keyCode == 27) {  document.getElementById("userMenu").style.display="none";}    
  
 });
  
@@ -279,6 +302,8 @@ document.getElementById("close").setAttribute("onclick","closePopUp()");
         
 }
  
+ // za click na backgrounda da iuzchgezvat prozrocite  ? ?  ? sas stopimeddiatepropagation 
+
 
 //  document.body.addEventListener("click",function (event) {
 //      document.getElementById("myDropdownDiv").style.display = "none";
@@ -416,7 +441,8 @@ document.querySelector("#registrationWrapper button[type=submit]").onclick = fun
         firstName: document.getElementById("firstName").value,
         lastName: document.getElementById("lastName").value,
         email:document.getElementById("email").value,
-        password: document.getElementById("pass").value
+        password: document.getElementById("pass").value,
+        cart : []
      }
     userList.push(user);
     document.getElementById("welcomeMessage").style.display = "block";
@@ -466,26 +492,40 @@ document.getElementById("enter").onclick = function () {
     console.log(userList);
     var email = document.querySelector("#popUp input[type=email]");
     var pass = document.querySelector("#popUp input[type=password]");
-    for (var key in userList)  {
-        if (email.value==userList[key].email && pass.value==userList[key].password) {
-            document.getElementById("welcomeMessage").style.display = "block";
-            document.querySelector("#welcomeMessage h1").innerHTML = "Welcome " + userList[key].firstName + " !";
-            document.getElementById("popUp").style.display = "none";
-            document.getElementById("userIcon").style.display = "inline";
-            loggedInFlag = true;
+    for (var index=0;index<userList.length;index++) {
+        for (var key in userList)  {
+                if (email.value==userList[key].email && pass.value==userList[key].password) {
+                document.getElementById("welcomeMessage").style.display = "block";
+                document.querySelector("#welcomeMessage h1").innerHTML = "Welcome " + userList[key].firstName + " !";
+                document.getElementById("popUp").style.display = "none";
+                document.getElementById("userIcon").style.display = "inline";
+                loggedInUser=true;
+                currentUser = userList[index];
+                console.log(currentUser);
+                
         }
         else {
             document.getElementById("welcomeMessage").style.display = "block";
             document.querySelector("#welcomeMessage h1").innerHTML = "Грешен email или парола!" 
+            }
         }
     }
 }
 
-
+document.getElementById("logOut").onclick = function () {
+    loggedInUser = false;
+    document.getElementById("userIcon").style.display = "none";
+    document.getElementById("userMenu").style.display = "none";
+// tova e za butona zapomni me
+    if (document.getElementById("rememberMe").checked === false) {
+        document.querySelector("#popUp input[type=password]").value = "";
+        document.querySelector("#popUp input[type=email]").value = "";   
+    }
+}
+ 
+ 
 // user ikona 
 document.getElementById("userIcon").onclick = function () {
     document.getElementById("userMenu").style.display = "unset";
 }
 
-
- 
