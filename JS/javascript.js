@@ -50,6 +50,8 @@ var menuButtons = document.querySelectorAll("#menuPageHeader nav button,#menuPag
 for (var index=0;index<productsMenuList.length;index++) {
         var productDiv =  document.createElement("div");
         productDiv.className = "productDiv";
+        productDiv.id = productsMenuList[index].productName;
+ 
         var imageDiv = document.createElement("div");
         productDiv.appendChild(imageDiv);
         imageDiv.className = "imageDiv";
@@ -100,6 +102,148 @@ for (var index=0;index<productsMenuList.length;index++) {
                 document.getElementById("drinksGallery").appendChild(productDiv);                     
         }
     }
+ 
+
+
+
+var productDivList = document.getElementsByClassName("productDiv");
+Array.prototype.forEach.call(productDivList,function (element) {
+        element.addEventListener("click", function (event) {
+        var bigProductDiv = document.getElementById("bigProductDiv");
+        document.getElementById("gallery").style.display = "none";
+        bigProductDiv.style.display = "block";
+        bigProductDiv.appendChild(document.getElementById("close"));
+        document.getElementById("close").onclick = function () {
+                bigProductDiv.style.display = "none";
+                document.getElementById("gallery").style.display = "unset";
+                document.getElementById("menuPageHeader").style.display = "unset";
+        }
+        document.getElementById("menuPageHeader").style.display = "none";
+        for (var index=0;index<productsMenuList.length;index++) {
+                if(element.id === productsMenuList[index].productName) {
+                        var img = document.createElement("img");
+                        img.className = "bigProductPic";
+                        img.src = productsMenuList[index].imgSrc;
+                        bigProductDiv.appendChild(img);
+                        var pizzaName = document.createElement("h1");
+                        pizzaName.className = "pizzaName";
+                        bigProductDiv.appendChild(pizzaName);
+                        pizzaName.innerText = productsMenuList[index].productName;
+
+
+                        //izbor na razmer
+                        var sizeSelect = document.createElement("select");
+                        sizeSelect.className = "sizeSelect";
+                        bigProductDiv.appendChild(sizeSelect);
+                        var option1 = document.createElement("option");
+                        var option2 = document.createElement("option");
+                        var option3 = document.createElement("option");
+                        var option4 = document.createElement("option");
+                        option1.text = "ГОЛЕМИНА";
+                        option2.text = "Средна (6 парчета)";
+                        option3.text = "Голяма (8 парчета)";
+                        option4.text = "Джъмбо (12 парчета)";
+                        sizeSelect.add(option1);
+                        sizeSelect.add(option2);
+                        sizeSelect.add(option3);
+                        sizeSelect.add(option4);
+
+                        
+                        //izbor na testo
+                        var doughSelect = document.createElement("select");
+                        doughSelect.className = "doughSelect";
+                        bigProductDiv.appendChild(doughSelect);
+                        var optionDough1 = document.createElement("option");
+                        var optionDough2 = document.createElement("option");
+                        var optionDough3 = document.createElement("option");
+                        var optionDough4 = document.createElement("option");
+                        optionDough1.text = "ТЕСТО";
+                        optionDough2.text = "Традиционно";
+                        optionDough3.text = "Италиански стил";
+                        optionDough4.text = "Тънко и хрупкаво + 2.50 лв.";
+                        doughSelect.add(optionDough1);
+                        doughSelect.add(optionDough2);
+                        doughSelect.add(optionDough3);
+                        doughSelect.add(optionDough4);
+
+                        //Sustavki
+                        var ingredients = document.createElement("p");
+                        ingredients.className = "ingredients";
+                        bigProductDiv.appendChild(ingredients);
+                        ingredients.innerText = "СЪСТАВКИ : "  + productsMenuList[index].ingredients;
+                        
+                        // broi 
+                        var range = document.createElement("input");
+                        range.className= "range";
+                        range.setAttribute("type", "number");
+                        range.value = 1.00;
+                        range.step = 1.00;
+                        range.min = 1.00;
+                        var number = document.createElement("p");
+                        number.innerText = "КОЛИЧЕСТВО: " + range.value;
+                       var priceSupportVariable = productsMenuList[index].price.toFixed(2);
+                       console.log(priceSupportVariable*2);
+                       console.log
+                        range.onchange = function () {
+                              number.innerText = "КОЛИЧЕСТВО: " + range.value;
+                              price.innerText = priceSupportVariable*range.value + " лв.";   
+                        }
+                        bigProductDiv.appendChild(number);
+                        bigProductDiv.appendChild(range);
+
+                        // cena 
+        
+                        var price = document.createElement("p");
+                        bigProductDiv.appendChild(price);
+                        price.className = "price";
+                        price.innerText = "ЦЕНА: " + priceSupportVariable + "лв.";
+                        sizeSelect.onchange = function () {
+                                if (sizeSelect.value === option2.value) {
+        price.innerText = parseInt(priceSupportVariable)*range.value   + " лв.";      
+                                }  
+                                if (sizeSelect.value === option3.value) {
+                            price.innerText = parseInt(priceSupportVariable) + 2.5 + " лв.";      
+                                }  
+                                if (sizeSelect.value === option4.value) {
+                            price.innerText = parseInt(priceSupportVariable) + 4.5 + " лв.";      
+                                }           
+                        }            
+                        doughSelect.onchange = function () {
+                                if (doughSelect.value === optionDough4.value) {
+                                         price.innerText = parseInt(priceSupportVariable) + 2.5 + " лв.";      
+                                }
+                                if (doughSelect.value === optionDough4.value && sizeSelect.value === option3.value) {
+                                         price.innerText = parseInt(priceSupportVariable) + 5 + " лв.";
+                                }
+                                if (doughSelect.value === optionDough4.value && sizeSelect.value === option4.value) {
+                                         price.innerText = parseInt(priceSupportVariable) + 7 + " лв.";
+                                }
+                        }                                                            
+                        //button porachai
+                        var buttonOrderFinal = document.createElement("button");
+                        buttonOrderFinal.innerHTML = "ПОРЪЧАЙ";
+                        bigProductDiv.appendChild(buttonOrderFinal);
+                        buttonOrderFinal.className = "buttonOrderFinal";
+                        currentProduct = productsMenuList[index];
+                        buttonOrderFinal.onclick = function () {
+                        currentUser.cart.push(currentProduct);
+                        document.getElementById("welcomeMessage").style.display = "block";
+                        document.querySelector("#welcomeMessage h1").innerHTML = "Този продукт беше добавен към вашата количка!" ; 
+                        }
+                                  
+                }
+        }
+       
+        },false)
+})
+
+document.getElementById("back").onclick = function () {      
+        document.getElementById("landingPage").style.display = "unset";
+        document.getElementById("menuPageHeader").style.display = "none";
+       
+
+}
+
  document.getElementById("salad").onclick = function (){
         document.getElementById("saladGallery").style.display = "flex";
         document.getElementById("pastaGallery").style.display = "none";
@@ -240,7 +384,18 @@ currentUser = {};
 var cart = document.getElementById("cart");
 var orderButton1 = document.getElementById("orderButton1");
 var orderButton2 = document.getElementById("orderButton2");
-orderButton1.setAttribute("onclick","popUp()");
+ 
+        orderButton1.onclick  = function () {
+        if(loggedInUser) {
+                document.getElementById("landingPage").style.display = "none";
+                document.getElementById("pizzaGallery").style.display = "flex";
+                document.getElementById("menuPageHeader").style.display = "unset";
+        }
+        if(!loggedInUser) {
+        popUp();
+}
+}
+
 orderButton2.setAttribute("onclick","popUp()");
 cart.onclick = function (){
         if(loggedInUser===true){
