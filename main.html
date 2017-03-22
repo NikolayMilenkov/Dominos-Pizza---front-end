@@ -291,8 +291,8 @@
                 <li><a href="#">MENU</a></li>
                 <li><a href="#">STORES</a></li>
                 <li><a href="#">CONTACT US</a></li>
-                <li><a href="#">TERMS OF USE</a></li>
-                <li><a href="#">JOB APPLICATION</a></li>
+                 <li><a href="#">TERMS OF USE</a></li>
+                <li><a id="jobAppLink" href="">JOB APPLICATION</a></li>
             </ul>
         </div>
         <div id="social_icons">
@@ -301,7 +301,7 @@
 
                 <li>
                     <a href="#"><img id="tel" src="images/tel.svg" /></a>
-                    <a href="#"><img id="tel_icon" src="images/tel.svg" /></a>
+                    <a href="#"><img id="tel_icon" src="images/tel_icon.svg" /></a>
                 </li>
                 <li>
                     <a href="#"><img src="images/facebook.svg" /></a>
@@ -328,7 +328,7 @@
 
     <!-- Contact form -->
     <div id="contact_form">
-        <form action="" method="POST">
+        <form action="" method="POST" id="feedForm">
             <table id="tableSale">
                 <tr>
                     <td>
@@ -343,22 +343,25 @@
             <p class="head_contact"><b>Вашето мнение е ценно!</b></p>
             <p class="head_contact">Можете да споделите всичко хубаво или лошо с нас!</p>
             <p class="info_contact"><label for="name">ИМЕ</label>
-                <input type="text" id="name" placeholder="Въведете вашето име" />
+                <input name="name" class="feed_inputs" type="text" id="name" placeholder="Въведете вашето име" />
             </p>
             <p class="info_contact"> <label for="email_1">ИМЕЙЛ</label>
-                <input type="email" id="email_1" placeholder="Въведете вашият имейл" />
+                <input name="email" class="feed_inputs" type="email" id="email_1" placeholder="Въведете вашият имейл" />
             </p>
             <p class="info_contact"> <label for="mob_phone">ТЕЛЕФОНЕН НОМЕР</label>
-                <input type="text" id="mob_phone" placeholder="Въведете своят номер" />
+                <input name="phoneNum" type="number" class="feed_inputs" id="mob_phone" placeholder="Въведете своят номер" />
             </p>
             <p class="info_contact"><label for="message">СЪОБЩЕНИЕ</label>
                 <textarea rows=" 8 " cols="80" id="message" placeholder="Напишете своето съобщение тук"></textarea>
             </p>
 
-            <p class="info_contact"> <label></label>
-                <input type="text" id="generator" placeholder="Въведете кода от картинката" />
-            </p>
-
+            <p class="info_contact">
+                <button id="codeGenButFeedBack">Generate Code</button>
+                <span id="generatedCodeForFeed"></span>
+                <input class="feed_inputs" type="text" id="generator" placeholder="Въведете кода" / </p>
+                <span id="warningFeedBack"></span>
+                <button id="sendFeedbackBut">ИЗПРАТЕТЕ</button>
+                <p id="warnPar"></p>
         </form>
     </div>
     <!-- Terms of use -->
@@ -435,39 +438,39 @@
             <p>Работник кухня</p>
         </div>
         <h1> ПОПЪЛНЕТЕ ДАННИТЕ </h1>
-        <form id="job_form">
+        <form action="" id="job_form">
             <p id="nameFull">
                 <label for="full_name">ИМЕ И ФАМИЛИЯ <sub>*</sub></label>
-                <input type="text" id="full_name" />
+                <input type="text" name="name" id="full_name" />
             </p>
             <div class="additional_info">
                 <p class="left_float">
                     <label for="city">ГРАД<sub>*</sub></label>
-                    <input type="text" id="city" />
+                    <input class="job_inputs" type="text" name="city" id="city" />
                 </p>
                 <p class="right_float">
                     <label for="phone_num">ТЕЛЕФОНЕН НОМЕР <sub>*</sub></label>
-                    <input type="text" id="phone_num" />
+                    <input class="job_inputs" type="number" name="phoneNumber" id="phone_num" />
                 </p>
             </div>
             <div class="additional_info">
                 <p class="left_float">
                     <label for="date_birth">ДАТА НА РАЖДАНЕ<sub>*</sub></label>
-                    <input type="date" id="date_birth" />
+                    <input class="job_inputs" type="date" id="date_birth" />
                 </p>
                 <p class="right_float">
-                    <label for="email">ТЕЛЕФОНЕН НОМЕР <sub>*</sub></label>
-                    <input type="email" id="email" />
+                    <label for="email">ДОПЪЛНИТЕЛНА ИНФОРМАЦИЯ</label>
+                    <input class="job_inputs" type="email" name="addInfo" id="email" />
                 </p>
             </div>
             <p id="I_want_to_work_as">БИХ ИСКАЛ ДА КАНДИДАТСТВАМ ЗА: <sub>*</sub></p>
             <div id="radio">
-                <p><input type="radio" name="jobName" value="driver" />Шофьор-доставчик
+                <p><input class="job_inputs" type="radio" name="jobName" id="driver_radio" value="driver" />Шофьор-доставчик
                 </p>
                 <p>
-                    <input type="radio" name="jobName" value="cooker" />Работник кухня
+                    <input class="job_inputs" type="radio" name="jobName" id="cook_radio" value="cooker" />Работник кухня
                 </p>
-                <p><input type="radio" name="jobName" value="both" />И двете</p>
+                <p><input class="job_inputs" type="radio" name="jobName" id="bothProf_radio" value="both" />И двете</p>
 
             </div>
             <div class="additional_info">
@@ -475,17 +478,22 @@
                     <label for="file">ИЗПРАТЕТЕ НИ ВАШЕТО CV</label>
                     <input type="file" id="file" value="fileupload" />
                 </p>
-                <p class="right_float">
+                <p id="code_gen" class="right_float">
                     <label for="code">КОД ЗА ПОТВЪРЖДЕНИЕ<sub>*</sub>  </label>
-                    <span id="code_generator"></span>
-                    <input type="text" id="code" />
+
+                    <button id="codeGenBut">Generate Code</button>
+                    <span id="generatedCode"></span>
+                    <input class="job_inputs" type="text" id="code" />
+                    <span id="warning"></span>
                 </p>
             </div>
-            <p>
-                Всички полета, отбелязани с (<sub>*</sub>) са задължителни
+
+            <button id="sent_job_app" value="ИЗПРАТЕТЕ">ИЗПРАТЕТЕ</button>
+            <p id="details">
             </p>
-            <button type="submit" value="ИЗПРАТЕТЕ">ИЗПРАТЕТЕ</button>
+
         </form>
+
 
     </div>
 
