@@ -44,7 +44,7 @@
                <div id="userMenu">
                    <ul>
                    <li><button>МОЯТ ПРОФИЛ</button></li>
-                   <li><button>ПОРЪЧКИ</button></li>
+                   <li><button id="cartUserMenu">КОЛИЧКА</button></li>
                    <li><button id="logOut">ИЗХОД</button></li>
                    </ul>
                </div>
@@ -82,6 +82,19 @@
                    <p id="passMessage"></p>
                    ПОТВЪРДЕТЕ ПАРОЛАТА*<input type="password" id="passConfirm"></br>
                    <button  type="submit" name="btn" value="val">Изпрати</button>
+            </fieldset> 
+            </form>
+        </div>
+        <div  id="addressInput">
+            <form>
+            <fieldset>
+                <img src="images/close2.png" alt="close" id="close2">
+            <legend>ВЪВЕДЕТЕ АДРЕС</legend> 
+                   ГРАД<input type="text" id="city">
+                  УЛИЦА<input type="text" id="street"></br>
+                   ТЕЛЕФОН ЗА ВРЪЗКА<input type="tel" id="tel"></br>
+                   <p id="passMessage"></p>
+                   <button  type="button" name="btn" value="val" id="sendAddress">Изпрати</button>
             </fieldset> 
             </form>
         </div>
@@ -301,14 +314,14 @@
           </nav>
       </header>
     <section id="gallery">
-          <section id="pizzaGallery"></section>
-          <section id="sandwichGallery"></section>
-          <section id="saladGallery"></section>
-          <section id="desertGallery"></section>
-          <section id="drinksGallery"></section>
-          <section id="pastaGallery"></section>
+          <div id="pizzaGallery"></div>
+          <div id="sandwichGallery"></div>
+          <div id="saladGallery"></div>
+          <div id="desertGallery"></div>
+          <div id="drinksGallery"></div>
+          <div id="pastaGallery"></div>
      </section>
-     <div id= "bigProductDiv"></div>
+      
 
 
 </body>
