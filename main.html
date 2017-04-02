@@ -15,7 +15,9 @@
 
 
     <header id="menu" onscroll="scroll">
+
         <div id="dropdownMain">
+            <p id="userWelcome"></p>
             <div id="dropdownContainer">
                 <img id="dropdown" src="images/dropdown.png" alt="">
                 <div id="myDropdownDiv" class="dropdown-content">
@@ -30,6 +32,7 @@
                 <img src="images/cart.png" id="cart" alt="">
             </div>
         </div>
+
         <nav id="mainNav">
             <a href=""><img src="images/logo.png" id="logo" alt="logo"> </a>
             <ul>
@@ -41,12 +44,13 @@
                 <li> <button id="orderButton1">ПОРЪЧАЙ СЕГА</button> </li>
             </ul>
         </nav>
+        <img id="back" src="images/back.png">
         <img src="images/userIcon.png" id="userIcon" alt="">
         <div id="userMenu">
             <ul>
                 <li><button>МОЯТ ПРОФИЛ</button></li>
-                <li><button>ПОРЪЧКИ</button></li>
-                <li><button>ИЗХОД</button></li>
+                <!--<li><button id="cartUserMenu">КОЛИЧКА</button></li>-->
+                <li><button id="logOut">ИЗХОД</button></li>
             </ul>
         </div>
 
@@ -56,12 +60,14 @@
             <fieldset id="login">
                 <img src="images/close.png" alt="close" id="close">
                 <legend>ВХОД</legend>
-                <button id="facebook" onclick="location.href='http://facebook.com';" target="_blank" value="Go to Facebook"></button>
+                <button id="facebook" onclick="location.href='http://facebook.com';" target="_blank" value="Go to Facebook" style="visibility: hidden"></button>
                 <input type="email" placeholder="E-Mail"></input>
                 <input type="password" placeholder="Парола"></input>
-                <input type="checkbox" id="rememberMe" name="rememberMe">
-                <label for=" rememberMe">Запомни ме </label>
+                <div id="remeberMe"> <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for=" rememberMe">Запомни ме </label>
+                </div>
                 <button id="enter" type='button'> Вход </button>
+
                 <button type='button' id="registration"> Регистрация </button>
                 <img src="images/logo.png" id="corleone" alt="">
             </fieldset>
@@ -76,11 +82,26 @@
                     <legend>РЕГИСТРАЦИЯ</legend>
                     ИМЕ*<input type="text" id="firstName"> ФАМИЛНО ИМЕ*<input type="text" id="lastName"></br>
                     <p id="nameMessage"></p>
-                    EMAIL*<input type="email" id="email"></br>
-                    <p id="emailMessage"></p>
-                    НОВА ПАРОЛА*<input type="password" id="pass"></br>
+                    <div id="addInfo">
+                        EMAIL*<input type="email" id="email"></br>
+                        <p id="emailMessage"></p>
+                        НОВА ПАРОЛА*<input type="password" id="pass"></br>
+                        <p id="passMessage"></p>
+                        ПОТВЪРДЕТЕ ПАРОЛАТА*<input type="password" id="passConfirm"></br>
+                        <button type="submit" name="btn" value="val">Изпрати</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="addressInput">
+            <form>
+                <fieldset>
+                    <img src="images/close2.png" alt="close" id="close2">
+                    <legend>ВЪВЕДЕТЕ АДРЕС</legend>
+                    ГРАД<input type="text" id="city"> УЛИЦА
+                    <input type="text" id="street"></br>
+                    ТЕЛЕФОН ЗА ВРЪЗКА<input type="tel" id="tel"></br>
                     <p id="passMessage"></p>
-                    ПОТВЪРДЕТЕ ПАРОЛАТА*<input type="password" id="passConfirm"></br>
                     <button type="submit" name="btn" value="val">Изпрати</button>
                 </fieldset>
             </form>
@@ -142,7 +163,7 @@
         </div>
         <div id="second_part">
             <div id="offer_con">
-                <article id="first_article">
+                <article>
                     <figure id="offer">
                         <img src="images/double_combo.jpeg" width="300px" height="200px" />
                         <figcaption id="offer_dis">
@@ -163,7 +184,7 @@
                         </tr>
                     </table>
                 </article>
-                <article id="second_article">
+                <article>
                     <figure id=offer>
                         <img src="images/combo2.jpg" width="300px" height="200px" />
                         <figcaption id="offer_dis">
@@ -248,13 +269,13 @@
                         <table class="header_art">
                             <tr>
                                 <td>
-                                    <img width=50px src="images/decoration.png" />
+                                    <img width=30px src="images/decoration.png" />
                                 </td>
                                 <td>
                                     <a href="#">Domino's pizza app</a>
                                 </td>
                                 <td>
-                                    <img width=50px src="images/decoration.png" />
+                                    <img width=30px src="images/decoration.png" />
                                 </td>
                             </tr>
                         </table>
@@ -262,20 +283,18 @@
                             <p> Поръчайте онлайн чрез безплатното ни приложение.</p>
                             <p>Свалете сега тук!</p>
                         </a>
-                        <div id="android_apple_icon">
-                            <ul>
-                                <li>
-                                    <a id="android" href="#"><img src="images/android_icon.svg" alt="android" width="30px" /></a>
-                                </li>
-                                <li id="and">&</li>
-                                <li>
-                                    <a id="android" href="#"><img src="images/apple_icon.svg" alt="android" width="30px" /></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="iphone_img">
+                        <ul>
+                            <li>
+                                <a id="android" href="#"><img src="images/android_icon.svg" alt="android" width="50px" /></a>
+                            </li>
+                            <li id="and">&</li>
+                            <li>
+                                <a id="android" href="#"><img src="images/apple_icon.svg" alt="android" width="50px" /></a>
+                            </li>
+                        </ul>
+                        <p id="iphone_img">
                             <a href="#"><img src="images/iphone.png" alt="phone" /></a>
-                        </div>
+                        </p>
                     </aside>
                 </div>
             </section>
@@ -283,16 +302,15 @@
 
     </section>
 
-
     <!-- footer -->
     <footer>
         <div id="info">
             <ul>
                 <li><a href="#">MENU</a></li>
                 <li><a href="#">STORES</a></li>
-                <li><a href="#">CONTACT US</a></li>
-                 <li><a href="#">TERMS OF USE</a></li>
-                <li><a id="jobAppLink" href="">JOB APPLICATION</a></li>
+                <li><a id="contactForm" href="#contact_form">CONTACT US</a></li>
+                <li><a id="termsOfUseLink" href="#termsOfUse">TERMS OF USE</a></li>
+                <li><a id="jobAppLink" href="#JobApp">JOB APPLICATION</a></li>
             </ul>
         </div>
         <div id="social_icons">
@@ -304,20 +322,20 @@
                     <a href="#"><img id="tel_icon" src="images/tel_icon.svg" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="images/facebook.svg" /></a>
+                    <a href="https://www.facebook.com/corleonepizzarias/"><img src="images/facebook.svg" /></a>
                 </li>
                 </li>
                 <li>
-                    <a href="#"><img src="images/twitter.svg" /></a>
+                    <a href="https://twitter.com/doncorleonepiz"><img src="images/twitter.svg" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="images/instagram.svg" /></a>
+                    <a href="https://www.instagram.com/corleonepizzarias/"><img src="images/instagram.svg" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="images/googleplus.svg" /></a>
+                    <a href="https://plus.google.com/115102586200139855577"><img src="images/googleplus.svg" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="images/youtube.svg" /></a>
+                    <a href="https://www.youtube.com/watch?v=gIyOwO1PXws"><img src="images/youtube.svg" /></a>
                 </li>
             </ul>
             <p id="rights">
@@ -482,51 +500,53 @@
                     <label for="code">КОД ЗА ПОТВЪРЖДЕНИЕ<sub>*</sub>  </label>
 
                     <button id="codeGenBut">Generate Code</button>
+
                     <span id="generatedCode"></span>
                     <input class="job_inputs" type="text" id="code" />
                     <span id="warning"></span>
+
                 </p>
             </div>
 
             <button id="sent_job_app" value="ИЗПРАТЕТЕ">ИЗПРАТЕТЕ</button>
             <p id="details">
             </p>
-
         </form>
 
-
     </div>
-
     <!--tuk zapochva stranicata s menuto -->
-    <header id="menuPageHeader ">
+    <header id="menuPageHeader">
         <nav>
-            <button class="buttons " id="sandwich ">САНДВИЧИ</button>
-            <button class="buttons " id="pizza "> ПИЦИ</button>
-            <button class="buttons " id="salad ">САЛАТИ</button>
-            <button class="buttons " id="pasta "> ПАСТА</button>
-            <button class="buttons " id="desert ">ДЕСЕРТИ</button>
-            <button class="buttons " id="drinks ">НАПИТКИ</button>
-            <div id="menuImages ">
-                <img src="images/sandwich.png " id="sandwich " alt=" ">
-                <img src="images/pizza.png " id="pizza " alt=" " width="250px">
-                <img src="images/salad.png " id="salad " alt=" ">
-                <img src="images/pasta.png " id="pasta " alt=" ">
-                <img src="images/desert.png " id="desert " alt=" ">
-                <img src="images/drinks.png " id="drinks " alt=" ">
+            <button class="buttons" id="sandwich">САНДВИЧИ</button>
+            <button class="buttons" id="pizza"> ПИЦИ</button>
+            <button class="buttons" id="salad">САЛАТИ</button>
+            <button class="buttons" id="pasta"> ПАСТА</button>
+            <button class="buttons" id="desert">ДЕСЕРТИ</button>
+            <button class="buttons" id="drinks">НАПИТКИ</button>
+            <div id="menuImages">
+                <img src="images/sandwich.png" id="sandwich1" alt="">
+                <img src="images/pizza.png" id="pizza1" alt="">
+                <img src="images/salad.png" id="salad1" alt="">
+                <img src="images/pasta.png" id="pasta1" alt="">
+                <img src="images/desert.png" id="desert1" alt="">
+                <img src="images/drinks.png" id="drinks1" alt="">
             </div>
         </nav>
     </header>
+    <section id="gallery">
+        <div id="pizzaGallery"></div>
+        <div id="sandwichGallery"></div>
+        <div id="saladGallery"></div>
+        <div id="desertGallery"></div>
+        <div id="drinksGallery"></div>
+        <div id="pastaGallery"></div>
+    </section>
 
-    <section id="pizzaGallery "></section>
-    <section id="sandwichGallery "></section>
-    <section id="saladGallery "></section>
-    <section id="desertGallery "></section>
-    <section id="drinksGallery "></section>
-    <section id="pastaGallery "></section>
 
 
 </body>
-<script type="text/javascript " src="JS/controller.js "></script>
-<script src="JS/javascript.js " type="text/javascript "></script>
+<script type="text/javascript" src="JS/controller.js"></script>
+<script type="text/javascript" src="JS/model.js"></script>
+<script src="JS/javascript.js" type="text/javascript"></script>
 
 </html>

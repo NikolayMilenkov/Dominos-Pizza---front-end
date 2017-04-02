@@ -113,9 +113,58 @@ document.getElementById("generator").addEventListener("focus", function() {
     document.getElementById("warningFeedBack").textContent = "";
 }, false);
 
-/*document.getElementById("jobAppLink").addEventListener("click", function() {
-    document.getElementById("JobApp").style.display = "block";
-    console.log("sasa");    
 
+function displayStyleDiv(idDiv, displayStyle) {
+    document.getElementById(idDiv).style.display = displayStyle
+}
+document.getElementById("jobAppLink").addEventListener("click", function(ev) {
 
-}, false)*/
+    displayStyleDiv("JobApp", "block");
+    displayStyleDiv("termsOfUse", "none");
+    displayStyleDiv("contact_form", "none");
+    ev.preventDefault();
+
+}, false);
+document.getElementById("termsOfUseLink").addEventListener("click", function(event) {
+    displayStyleDiv("JobApp", "none");
+    displayStyleDiv("termsOfUse", "block");
+    displayStyleDiv("contact_form", "none");
+    event.preventDefault();
+}, false)
+document.getElementById("contactForm").addEventListener("click", function(event) {
+    displayStyleDiv("JobApp", "none");
+    displayStyleDiv("termsOfUse", "none");
+    displayStyleDiv("contact_form", "block");
+    event.preventDefault();
+}, false);
+
+(function($) {
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1) {
+                var header = document.getElementById("menu");
+                header.style.backgroundColor = "rgba(154,205,50,0.8)";
+                header.style.transition = "all 0.7s ease-in";
+                $('#menu').fadeIn(1000);
+            } else {
+                var header = document.getElementById("menu");
+                header.style.backgroundColor = "transparent";
+            }
+        });
+    });
+})(jQuery);
+
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
+
+//slideshow
+$("#slideshow > div:gt(0)").hide();
+setInterval(function() {
+    $('#slideshow > div:first')
+        .fadeOut(500)
+        .next()
+        .fadeIn(500)
+        .end()
+        .appendTo('#slideshow');
+}, 7000);
